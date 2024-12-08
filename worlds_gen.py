@@ -12,7 +12,7 @@ def roll(dice=1,type=6, mods=0,stat_mod=0,stat_type=0):
     return(random.randint(min,max))
 
 def printClass(name,number):
-    print(name,'Class',f'{number:x}'.upper()+"-")
+    print('\033[1m'+str(name),'Class',f'{number:x}'.upper()+"-",'\033[0m')
 #Import Data
 input = open("worlds.json", "r")
 tables=json.load(input)
@@ -21,16 +21,25 @@ tables=json.load(input)
 size_table=tables['SIZE']
 size= roll(size_table['ROLL'],size_table['ROLL_TYPE'],size_table['ROLL_MOD'])
 size_d= random.randint(size_table[str(size)]['DIAMETER_MIN'],size_table[str(size)]['DIAMETER_MAX'])
+size_mass =round(random.uniform(size_table[str(size)]['MASS_MIN'],size_table[str(size)]['MASS_MAX']),4)
 printClass('Size',size)
-print(" ","Diameter",str(size_d)+"Km")
+print(" Diameter",str(size_d)+" Km")
+print(" Mass",str(size_mass)+' Mₑ')
+
+g=6.6743e-11
+e=5.97219 * 10**24
+g_force= (((g*(size_mass*(e)))/(size_d*1000/2)**2))
+size_Gs= round(g_force/9.8,2)
+
+print(" Gravity",str(size_Gs)+' Gs')
 
 #Atmo, Side Dependat 
 atmo_table=tables['ATMOSPHERE']
 atmo= roll(atmo_table['ROLL'],atmo_table['ROLL_TYPE'],atmo_table['ROLL_MOD'],size,atmo_table["ROLL_STAT_MOD_TYPE"])
 atmo_pressure= round(random.uniform(atmo_table[str(atmo)]['PRESSURE_MIN'],atmo_table[str(atmo)]['PRESSURE_MAX']),2)
-printClass("Atmospher",atmo)
-print(' Pressure',atmo_pressure)
-print(' Type:',atmo_table[str(atmo)]['COMP'], 'Tainted' if atmo_table[str(atmo)]['TAINTED'] else 'Safe')
+printClass("Atmospher",atmo,)
+print(' Pressure',atmo_pressure,)
+print(' Type:',atmo_table[str(atmo)]['COMP'], '\033[91m Tainted \033[0m' if atmo_table[str(atmo)]['TAINTED'] else '\033[92m Safe \033[0m ')
 #Tempature
 temp_mod= 0
 
