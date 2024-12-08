@@ -1,0 +1,70 @@
+{
+    "SIZE":{
+        "ROLL":2,
+        "ROLL_TYPE":6,
+        "ROLL_MOD":-2,
+        "0":{"DIAMETER_MIN": 1, "DIAMETER_MAX":1000, "MASS_MIN": 1, "MASS_MAX":1000, "EXAMPLE":"Astroid, orbital ocmplex","Gs":0.001},
+        "1":{"DIAMETER_MIN": 1001, "DIAMETER_MAX":1600, "MASS_MIN": 10001, "MASS_MAX":1600, "EXAMPLE":"Triton","Gs":0.05},
+        "2":{"DIAMETER_MIN": 1601, "DIAMETER_MAX":3200, "MASS_MIN": 1, "MASS_MAX":1000, "EXAMPLE":"Luna, Eurpoa","Gs":0.15},
+        "3":{"DIAMETER_MIN": 3201, "DIAMETER_MAX":4800, "MASS_MIN": 1, "MASS_MAX":1000, "EXAMPLE":"Mercury, Ganymede","Gs":0.25},
+        "4":{"DIAMETER_MIN": 4801, "DIAMETER_MAX":6400, "MASS_MIN": 1, "MASS_MAX":1000, "EXAMPLE":"Mars","Gs":0.35},
+        "5":{"DIAMETER_MIN": 6401, "DIAMETER_MAX":8000, "MASS_MIN": 1, "MASS_MAX":1000, "EXAMPLE":"","Gs":0.45},
+        "6":{"DIAMETER_MIN": 8001, "DIAMETER_MAX":9600, "MASS_MIN": 1, "MASS_MAX":1000, "EXAMPLE":"","Gs":0.7},
+        "7":{"DIAMETER_MIN": 9601, "DIAMETER_MAX":11200, "MASS_MIN": 1, "MASS_MAX":1000, "EXAMPLE":"","Gs":0.9},
+        "8":{"DIAMETER_MIN": 11201, "DIAMETER_MAX":12800, "MASS_MIN": 1, "MASS_MAX":1000, "EXAMPLE":"Earth","Gs":1},
+        "9":{"DIAMETER_MIN": 12801, "DIAMETER_MAX":14400, "MASS_MIN": 1, "MASS_MAX":1000, "EXAMPLE":"","Gs":1.25},
+        "10":{"DIAMETER_MIN": 14401, "DIAMETER_MAX":16000, "MASS_MIN": 1, "MASS_MAX":1000, "EXAMPLE":"","Gs":1.4}
+
+    },
+    "ATMOSPHERE":{
+        "ROLL":2,
+        "ROLL_TYPE":6,
+        "ROLL_MOD":-7,
+        "ROLL_STAT_MOD":"SIZE",
+        "ROLL_STAT_MOD_TYPE": 1,
+        "0":{"COMP":"None", "TAINTED":false, "EXAMPLE":"Moon","PRESSURE_MIN":0.00,"PRESSURE_MAX":0,"GEAR":"Vacc Suit"},
+        "1":{"COMP":"Trace", "TAINTED":false, "EXAMPLE":"Mars","PRESSURE_MIN":0.01,"PRESSURE_MAX":0.09,"GEAR":"Vacc Suit"},
+        "2":{"COMP":"Very Thin","TAINTED":true, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":0.42,"GEAR":"Respirator, Filter"},
+        "3":{"COMP":"Very Thin","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":0.42,"GEAR":"Respirator"},
+        "4":{"COMP":"Thin","TAINTED":true, "EXAMPLE":"","PRESSURE_MIN":0.43,"PRESSURE_MAX":0.7,"GEAR":"Filter"},
+        "5":{"COMP":"Thin","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.43,"PRESSURE_MAX":0.7,"GEAR":""},
+        "6":{"COMP":"Standard","TAINTED":false, "EXAMPLE":"Earth","PRESSURE_MIN":0.71,"PRESSURE_MAX":1.49,"GEAR":""},
+        "7":{"COMP":"Standard","TAINTED":true, "EXAMPLE":"","PRESSURE_MIN":0.71,"PRESSURE_MAX":1.49,"GEAR":"Filter"},
+        "8":{"COMP":"Dense","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":1.5,"PRESSURE_MAX":2.49,"GEAR":""},
+        "9":{"COMP":"Dense","TAINTED":true, "EXAMPLE":"","PRESSURE_MIN":1.5,"PRESSURE_MAX":2.49,"GEAR":"Filter"},
+        "10":{"COMP":"Exotic","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR":"Air Supply"},
+        "11":{"COMP":"Corrosive","TAINTED":false, "EXAMPLE":"Venus","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR":"Vacc Suit"},
+        "12":{"COMP":"Insidious","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR":"Vacc Suit"},
+        "13":{"COMP":"Very Dense","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":2.5,"PRESSURE_MAX":6,"GEAR":""},
+        "14":{"COMP":"Low","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":0.5,"GEAR":"Respirator"},
+        "15":{"COMP":"Unusal","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR":""}
+    },
+    "HYDROGRAPHICS":{
+        "ROLL":2,
+        "ROLL_TYPE":6,
+        "ROLL_MOD":-7,
+        "ROLL_STAT_MOD":"ATMOSPHERE",
+        "ROLL_STAT_MOD_TYPE": 1,
+        "0":{"MIN":0,"MAX":0.05,"DESCRIPTION":"Desert"},
+        "1":{"MIN":0.06,"MAX":0.15,"DESCRIPTION":"Dry"},
+        "2":{"MIN":0.16,"MAX":0.25,"DESCRIPTION":"A few small areas"},
+        "3":{"MIN":0.26,"MAX":0.35,"DESCRIPTION":"Small Seas and Oceans"},
+        "4":{"MIN":0.36,"MAX":0.45,"DESCRIPTION":"Wet"},
+        "5":{"MIN":0.46,"MAX":0.55,"DESCRIPTION":"A large ocean"},
+        "6":{"MIN":0.56,"MAX":0.65,"DESCRIPTION":"Large oceans"},
+        "7":{"MIN":0.66,"MAX":0.75,"DESCRIPTION":"Earth-like"},
+        "8":{"MIN":0.76,"MAX":0.85,"DESCRIPTION":"Few islands and archipelagos"},
+        "9":{"MIN":0.86,"MAX":0.95,"DESCRIPTION":"Almost entirely water"},
+        "10":{"MIN":0.96,"MAX":1,"DESCRIPTION":"Waterwrold"}
+        
+    },
+    "TEMPERATURE":{
+        "ROLL":2,
+        "ROLL_TYPE":6,
+        "0-2":{"TYPE":"Frozen","AVG_TEMP":-51},
+        "3-4":{"TYPE":"Cold","AVG_TEMP":-25},
+        "5-9":{"TYPE":"Temperate","AVG_TEMP":15},
+        "10-11":{"TYPE":"Hot","AVG_TEMP":45},
+        "12+":{"TYPE":"Boiling","AVG_TEMP":81}
+    }
+}
