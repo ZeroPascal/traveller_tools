@@ -181,11 +181,50 @@ else:
         case 3,4:
             starport_mod=-1
 
-starport = tables['STARPORT_CLASS'][str(roll(2,6,starport_mod))]
+#Tech Level
+world['techClass']=roll(1,6,0)
+#Starports
+world['starportClass'] = tables['STARPORT_CLASS'][str(roll(2,6,starport_mod))]
+starport_table=tables['STARPORTS'][str(world['starportClass'])]
+printClass('Starport',world['starportClass'],True)
 
-printClass('Starport',starport,True)
-tech=roll(1,6,0)
+world['starportCost']=roll(1,6,0)*starport_table["COST"]
+world['starportFaclilites']=starport_table['FACILITIES']
 
+highportDM= starport_table['HIGHPORT']
+if(highportDM>0):
+    highport_mod =0
+    if(9<=world['techClass']>=11):
+        highport_mod+=1
+    elif world['techClass']>=12:
+        highport_mod+=2
+    
+    if(world['populationClass']>=9):
+        highport_mod+=1
+    if(world['populationClass']<=6):
+        highport_mod+=-1
+    
+    if(roll(2,6,highport_mod)>=highportDM):
+        world['starportFaclilites'].append('Highport')
+
+print(" Berthing Cost",world['starportCost'])
+print(" Facliites:")
+if(len(world['starportFaclilites'])>0):
+    for f in world['starportFaclilites']:
+        print('     ',f)
+else:
+    print('     None')
+
+world['starportBases']=[]
+for b in starport_table['BASES']:
+    if(starport_table['BASES'][b]>0 and roll(2,6,0)>=starport_table['BASES'][b]):
+       world['starportBases'].append(b)
+print(' Bases:')
+if(len(world['starportBases'])>0):
+    for b in world['starportBases']:
+        print('     ',b)
+else:
+    print('     None')
 trade_code =[]
 
 if(4<= world['atmospherClass'] >=9 and 4<=world['hydrographicsClass']>=8 and 5<=world['populationClass']>=7):
@@ -202,7 +241,7 @@ if(6<=world['sizeClass']>=8 and (5<world['atmospherClass']>=6 or world['atmosphe
     trade_code.append('Ga')
 if(world['populationClass']>=9):
     trade_code.append('Hi')
-if(tech>=12):
+if(world['techClass']>=12):
     trade_code.append('Ht')
 if(0<=world['atmospherClass']>=1 and world['hydrographicsClass']>=1):
     trade_code.append('Ic')
@@ -210,7 +249,7 @@ if(world['populationClass']>=9 and (0<=world['atmospherClass']>=2 or world['atmo
     trade_code.append('In')
 if(1<=world['populationClass']>=3):
     trade_code.append('Lo')
-if(tech<=5):
+if(world['techClass']<=5):
     trade_code.append('Lt')
 if(0<=world['atmospherClass']>=3 and 0<=world['hydrographicsClass']>=3 and world['populationClass']>=6):
     trade_code.append('Na')

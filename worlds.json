@@ -213,6 +213,45 @@
         "12":"A",
         "13":"A",
         "14":"A"
+    },
+    "STARPORTS":{
+        "X":{"QUALITY": "No Starport", "COST": 0, "FULE":"None", "FACILITIES": [], "HIGHPORT": 0, "BASES":{
+            "Military": 0,
+            "Naval": 0,
+            "Scout": 0,
+            "Corsair": 10
+        }},
+        "E":{"QUALITY": "Frontier", "COST": 0, "FULE":"None", "FACILITIES": [], "HIGHPORT": 0, "BASES":{
+            "Military": 0,
+            "Naval": 0,
+            "Scout": 0,
+            "Corsair": 10
+        }},
+        "D":{"QUALITY": "Poor", "COST": 10, "FULE":"Unrefined", "FACILITIES": ["Limited Repair"], "HIGHPORT": 12, "BASES":{
+            "Military": 0,
+            "Naval": 0,
+            "Scout": 8,
+            "Corsair": 12
+        }},
+        "C":{"QUALITY": "Routine", "COST":100, "FULE":"Unrefined", "FACILITIES": ["Shipyard (Small carft)","Repair"], "HIGHPORT": 10, "BASES":{
+            "Military": 10,
+            "Naval": 0,
+            "Scout": 9,
+            "Corsair": 10
+        }},
+        "B":{"QUALITY": "Good", "COST":500,"FULE":"Refined", "FACILITIES": ["Shipyard (Spacecraft)","Repair"], "HIGHPORT": 8, "BASES":{
+            "Military": 8,
+            "Naval": 8,
+            "Scout": 9,
+            "Corsair": 0
+        }},
+        "A":{"QUALITY": "Excellent", "COST":1000,"FULE":"Refined", "FACILITIES": ["Shipyard (all)","Repair"], "HIGHPORT": 6, "BASES":{
+            "Military": 8,
+            "Naval": 8,
+            "Scout": 10,
+            "Corsair": 0
+        }}
+
     }
         
 }
