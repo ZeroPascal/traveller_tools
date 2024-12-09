@@ -1,8 +1,5 @@
 {
     "SIZE":{
-        "ROLL":2,
-        "ROLL_TYPE":6,
-        "ROLL_MOD":-2,
         "0":{"DIAMETER_MIN": 1, "DIAMETER_MAX":1000, "MASS_MIN": 0.001, "MASS_MAX":0.003, "EXAMPLE":"Astroid, orbital complex","Gs":0.001},
         "1":{"DIAMETER_MIN": 1001, "DIAMETER_MAX":1600, "MASS_MIN": 0.002, "MASS_MAX":0.005, "EXAMPLE":"Triton","Gs":0.05},
         "2":{"DIAMETER_MIN": 1601, "DIAMETER_MAX":3200, "MASS_MIN": 0.005, "MASS_MAX":0.01, "EXAMPLE":"Luna, Eurpoa","Gs":0.15},
@@ -17,11 +14,6 @@
 
     },
     "ATMOSPHERE":{
-        "ROLL":2,
-        "ROLL_TYPE":6,
-        "ROLL_MOD":-7,
-        "ROLL_STAT_MOD":"SIZE",
-        "ROLL_STAT_MOD_TYPE": 1,
         "0":{"COMP":"None", "TAINTED":false, "EXAMPLE":"Moon","PRESSURE_MIN":0.00,"PRESSURE_MAX":0,"GEAR":"Vacc Suit"},
         "1":{"COMP":"Trace", "TAINTED":false, "EXAMPLE":"Mars","PRESSURE_MIN":0.01,"PRESSURE_MAX":0.09,"GEAR":"Vacc Suit"},
         "2":{"COMP":"Very Thin","TAINTED":true, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":0.42,"GEAR":"Respirator, Filter"},
@@ -40,11 +32,6 @@
         "15":{"COMP":"Unusal","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR":""}
     },
     "HYDROGRAPHICS":{
-        "ROLL":2,
-        "ROLL_TYPE":6,
-        "ROLL_MOD":-7,
-        "ROLL_STAT_MOD":"ATMOSPHERE",
-        "ROLL_STAT_MOD_TYPE": 1,
         "0":{"MIN":0,"MAX":0.05,"DESCRIPTION":"Desert"},
         "1":{"MIN":0.06,"MAX":0.15,"DESCRIPTION":"Dry"},
         "2":{"MIN":0.16,"MAX":0.25,"DESCRIPTION":"A few small areas"},
@@ -59,8 +46,6 @@
         
     },
     "TEMPERATURE":{
-        "ROLL":2,
-        "ROLL_TYPE":6,
         "0":{"TYPE":"Frozen"},
         "1":{"TYPE":"Frozen"},
         "2":{"TYPE":"Frozen"},
