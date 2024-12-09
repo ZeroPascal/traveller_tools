@@ -199,6 +199,35 @@
             "Significant":{"DESCRIPTION":"Nearly as powerful as the goverment"},
             "Overhwelming":{"DESCRIPTION":"More powerful than the goverment"}       
         }
+    },
+    "LAW":{
+        "0":{"WEAPONDS":"Recommended", "ARMOUR":"Recommended"},
+        "1":{"WEAPONDS":"Poison gas, explosives, undetectable weapons, WMD", "ARMOUR":"Battle Dress"},
+        "2":{"WEAPONDS":"Portable energy and laser", "ARMOUR":"Combat armour"},
+        "3":{"WEAPONDS":"Military grade", "ARMOUR":"Flak"},
+        "4":{"WEAPONDS":"Light assult, submachine guns", "ARMOUR":"Cloth"},
+        "5":{"WEAPONDS":"Personal concealable", "ARMOUR":"Mesh"},
+        "6":{"WEAPONDS":"All firearms execept shotguns & stunners; carrying weapons disouraged", "ARMOUR":""},
+        "7":{"WEAPONDS":"Shotguns", "ARMOUR":""},
+        "8":{"WEAPONDS":"All bladed weapons, stunners", "ARMOUR":"All visible armour"},
+        "9":{"WEAPONDS":"All", "ARMOUR":"All"}
+    },
+    "STARPORT_CLASS":{
+        "0":"X",
+        "1":"X",
+        "2":"X",
+        "3":"E",
+        "4":"E",
+        "5":"D",
+        "6":"D",
+        "7":"C",
+        "8":"C",
+        "9":"B",
+        "10":"B",
+        "11":"A",
+        "12":"A",
+        "13":"A",
+        "14":"A"
     }
         
 }
