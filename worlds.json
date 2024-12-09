@@ -61,10 +61,144 @@
     "TEMPERATURE":{
         "ROLL":2,
         "ROLL_TYPE":6,
-        "0-2":{"TYPE":"Frozen","AVG_TEMP":-51},
-        "3-4":{"TYPE":"Cold","AVG_TEMP":-25},
-        "5-9":{"TYPE":"Temperate","AVG_TEMP":15},
-        "10-11":{"TYPE":"Hot","AVG_TEMP":45},
-        "12+":{"TYPE":"Boiling","AVG_TEMP":81}
+        "0":{"TYPE":"Frozen"},
+        "1":{"TYPE":"Frozen"},
+        "2":{"TYPE":"Frozen"},
+        "3":{"TYPE":"Cold"},
+        "4":{"TYPE":"Cold"},
+        "5":{"TYPE":"Temperate"},
+        "6":{"TYPE":"Temperate"},
+        "7":{"TYPE":"Temperate"},
+        "8":{"TYPE":"Temperate"},
+        "9":{"TYPE":"Temperate"},
+        "10":{"TYPE":"Hot"},
+        "11":{"TYPE":"Hot"},
+        "12":{"TYPE":"Boiling"},
+        "TYPES":{
+            "Frozen":{"MIN": -110, "MAX": -51, "AVG_TEMP":-51, "DESCRIPTION":"Frozen world. No liquid water, very dry atmosphere." },
+            "Cold":{"MIN": -50, "MAX": 0,"AVG_TEMP":-25, "DESCRIPTION": "Icy world. Little liquid water, extensive ice caps, few clouds."},
+            "Temperate":{"MIN": 1, "MAX": 30,"AVG_TEMP":15, "DESCRIPTION":"Temperate world. Earth-like. Liquid & vaporised water are common, moderate ice caps."},
+            "Hot":{"MIN": 31, "MAX": 80,"AVG_TEMP":45, "DESCRIPTION": "Hot world. Small or no ice caps, little liquid water. Most water in the form of clouds."},
+            "Boiling":{"MIN": 81, "MAX": 99,"AVG_TEMP":45, "DESCRIPTION": "Boiling world. No ice caps, little liquid water"}
+        }
+    },
+    "POPULATION":{
+        "0":{"INHABITANTS":"None", "DESCRIPTION":""},
+        "1":{"INHABITANTS":"Few", "DESCRIPTION":"A tiny farmsted or a single family"},
+        "2":{"INHABITANTS":"Hundreds", "DESCRIPTION":"A village"},
+        "3":{"INHABITANTS":"Thousands", "DESCRIPTION":""},
+        "4":{"INHABITANTS":"Tens of Thousands", "DESCRIPTION":"Small town"},
+        "5":{"INHABITANTS":"Hundreds of Thousands", "DESCRIPTION":"Average City"},
+        "6":{"INHABITANTS":"Millions", "DESCRIPTION":""},
+        "7":{"INHABITANTS":"Tens of Millions", "DESCRIPTION":"Large City"},
+        "8":{"INHABITANTS":"Hundreds of Millions", "DESCRIPTION":""},
+        "9":{"INHABITANTS":"Billions", "DESCRIPTION":"Present day Earth"},
+        "10":{"INHABITANTS":"Tens of Billions", "DESCRIPTION":""},
+        "11":{"INHABITANTS":"Hundreds of Billions", "DESCRIPTION":"Incredibly crowded world"},
+        "12":{"INHABITANTS":"Trillions", "DESCRIPTION":"World-city"}
+    },
+    "GOVERMENT":{
+        "0":{"TYPE":"None",
+            "DESCRIPTION":"No government structure. In many cases, family bonds predominate. ",
+            "EXAMPLE":"Family, clan, anarchy ",
+            "CONTRABAND":"None"
+        },
+        "1":{"TYPE":"Company,Corporation",
+            "DESCRIPTION":"Ruling functions are assumed by a company managerial elite and most citizenry are company employees or dependents.",
+            "EXAMPLE":"Corporate outpost, asteroid mine, feudal domain",
+            "CONTRABAND":"Weapons, Drugs, Travellers"
+        },
+        "2":{"TYPE":"Participating Democarcy",
+            "DESCRIPTION":"Ruling functions are reached by the advice and consent of the citizenry directly.",
+            "EXAMPLE":"Collective, Tribal council, Comm-linked Consensus",
+            "CONTRABAND":"Drugs"
+        },
+        "3":{"TYPE":"Self-Perpetuating Oligarchy",
+            "DESCRIPTION":"Ruling functions are performed by a restricted minority, with little or no input from the mass of citizenry.",
+            "EXAMPLE":"Plutocracy, Hereditary ruling caste",
+            "CONTRABAND":"Technology, Weapons, Travellers"
+        },
+        "4":{"TYPE":"Representative Democracy",
+            "DESCRIPTION":"Ruling functions are performed by elected representatives.",
+            "EXAMPLE":"Republic, Democracy",
+            "CONTRABAND":"Drugs, Weapons, Psionics"
+        },
+        "5":{"TYPE":"Feudal Technocracy",
+            "DESCRIPTION":"Ruling functions are performed by specific individuals for persons who agree to be ruled by them. Relationships are based on the performance of technical activities that are mutually beneficial.",
+            "EXAMPLE":"Those with access to advanced technology tend to have higher social status",
+            "CONTRABAND":"Technology, Weapons, Computers"
+        },
+        "6":{"TYPE":"Captive Government",
+            "DESCRIPTION":"Ruling functions are performed by an imposed leadership answerable to an outside group.",
+            "EXAMPLE":"A colony, Conquered area",
+            "CONTRABAND":"Weapons,Technology, Travellers"
+        },
+        "7":{"TYPE":"Balkanisation",
+            "DESCRIPTION":"No central authority exists; rival governments complete for control. Law level refers to the government nearest the starport.",
+            "EXAMPLE":"Multiple governments, Civil war",
+            "CONTRABAND":"Varies"
+        },
+        "8":{"TYPE":"Civil Service Bureaucracy",
+            "DESCRIPTION":"Ruling functions are performed by government agencies employing individuals selected for their expertise.",
+            "EXAMPLE":"Technocracy, Communism",
+            "CONTRABAND":"Technocracy, Communism Drugs, Weapons"
+        },
+        "9":{"TYPE":"Impersonal Bureaucracy",
+            "DESCRIPTION":"Ruling functions are performed by agencies that have become insulated from the governed citizens.",
+            "EXAMPLE":"Entrenched castes of bureaucrats, Decaying Empire",
+            "CONTRABAND":"Technology, Weapons, Drugs, Travellers, Psionics"
+        },
+        "10":{"TYPE":"Charismatic Dictator",
+            "DESCRIPTION":"Ruling functions are performed by agencies directed by a single leader who enjoys the overwhelming confidence of the citizens.",
+            "EXAMPLE":"Revolutionary leader, Messiah, Emperor",
+            "CONTRABAND":"None"
+        },
+        "11":{"TYPE":"Non-Charismatic Leader",
+            "DESCRIPTION":"A previous charismatic dictator has been replaced by a leader through normal channels.",
+            "EXAMPLE":"Military dictatorship, Hereditary kingship",
+            "CONTRABAND":"Weapons, Technology, Computers"
+        },
+        "12":{"TYPE":"Charismatic Oligarchy",
+            "DESCRIPTION":"Ruling functions are performed by a select group of members of an organization or class that enjoys the overwhelming confidence of the citizenry.",
+            "EXAMPLE":"Junta, Revolutionary council",
+            "CONTRABAND":"Weapons"
+        },
+        "13":{"TYPE":"Religious Dictatorship",
+            "DESCRIPTION":"Ruling functions are performed by a religious organization without regard to the specific individual needs of the citizenry.",
+            "EXAMPLE":"Cult, Transcendent philosophy, Group Mind",
+            "CONTRABAND":"Varies"
+        },
+        "14":{"TYPE":"Religious Autocracy",
+            "DESCRIPTION":"Government by a single religious leader having absolute power over the citizenry.",
+            "EXAMPLE":"Messiah",
+            "CONTRABAND":"Varies"
+        },
+        "15":{"TYPE":"Totalitarian Oligarchy",
+            "DESCRIPTION":"Government by an all-powerful minority which maintains absolute control through widespread coercion and oppression.",
+            "EXAMPLE":"World church, Ruthless corporation",
+            "CONTRABAND":"Varies"
+        }
+    },
+    "FRACTIONS":{
+        "2": "Obscure",
+        "3": "Obscure",
+        "4": "Fringe",
+        "5": "Fringe",
+        "6": "Minor",
+        "7": "Minor",
+        "8": "Notable",
+        "9": "Notable",
+        "10": "Significant",
+        "11": "Significant",
+        "12": "Overwhelming",
+        "TYPES":{
+            "Obscure":{"DESCRIPTION":"Few have heard of them, no popular support"},
+            "Fringe":{"DESCRIPTION":"Few supporters"},
+            "Minor":{"DESCRIPTION":"Some supporters"},
+            "Notable":{"DESCRIPTION":"Significant support, well known"},
+            "Significant":{"DESCRIPTION":"Nearly as powerful as the goverment"},
+            "Overhwelming":{"DESCRIPTION":"More powerful than the goverment"}       
+        }
     }
+        
 }

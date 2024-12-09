@@ -41,6 +41,7 @@ printClass("Atmospher",atmo,)
 print(' Pressure',atmo_pressure,)
 print(' Type:',atmo_table[str(atmo)]['COMP'], '\033[91m Tainted \033[0m' if atmo_table[str(atmo)]['TAINTED'] else '\033[92m Safe \033[0m ')
 #Tempature
+temp_table = tables['TEMPERATURE']
 temp_mod= 0
 
 match atmo:
@@ -70,8 +71,20 @@ match random.randint(0,2):
         cold_edge= True
 
 temp= roll(2,6,temp_mod)
+if(temp>=12):
+    temp_type= temp_table['TYPES']['Boiling']
+else:
+    temp_type= temp_table[str(temp)]['TYPE']
+
+temp_avg=0
+try:
+    temp_avg = random.randint(temp_table['TYPES'][temp_type]["MIN"],temp_table['TYPES'][temp_type]["MAX"])
+except Exception as e:
+    print(e)
+    print(temp)
 printClass('Temperature', temp)
 print(" Temprate Zone:","Hot Zone" if hot_edge else "Cold Zone" if cold_edge else "Normal" )
+print(" Average Tempature:",temp_avg)
     
 #Hydrographics
 hydro_table=tables['HYDROGRAPHICS']
@@ -98,15 +111,30 @@ if(size>1):
 
 hyrod_percentage= round(random.uniform(hydro_table[str(hydro)]['MIN'],hydro_table[str(hydro)]['MAX'])*100)   
 printClass('Hydrographics',hydro)
-print(' Percentage',str(hyrod_percentage)+"%")
+print(' Type:',hydro_table[str(hydro)]["DESCRIPTION"])
+print(' Percentage:',str(hyrod_percentage)+"%")
 
 population=roll(2,6,-2)
 
 printClass('Population Class',population)
 
-goverment= roll(2,6,population-7)
+pop_number =0
+if(population>0):
+    pop_number = random.randint(1,9)*10**population
 
+    
+print(' Population',f'{pop_number:,}')
+
+goverment= roll(2,6,population-7)
+gov_table = tables['GOVERMENT'][str(goverment)]
 printClass('Goverment',goverment)
+
+def getGovType(gov_table):
+    gov_type = gov_table['TYPE'].split(',')
+    return str(gov_type[len(gov_type)-1])
+
+gov_example= getGovType(gov_table)
+print(' Type:',gov_example)
 
 fraction_mod=0
 if(goverment==0 or goverment==7):
@@ -114,10 +142,20 @@ if(goverment==0 or goverment==7):
 if(goverment>=10):
     fraction_mod+=-1
 
-fraction=roll(3,6,fraction_mod)
+fraction_count=roll(1,3,fraction_mod)
 
-printClass('Fraction',fraction)
+printClass('Fractions',fraction_count)
 
+fractions = []
+for f in range(fraction_count):
+    fGov = tables['GOVERMENT'][str(roll(2,6))]
+    fractions.append(
+        tables['FRACTIONS'][str(roll(2,6))]+" "+getGovType(fGov)
+
+    )
+
+for f in fractions:
+    print(" ",f)
 law=roll(2,6,goverment-7)
 
 printClass('Law Level',law)
