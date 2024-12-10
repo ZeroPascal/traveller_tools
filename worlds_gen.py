@@ -91,11 +91,11 @@ else:
 
 world['temperatureType']= 'Boiling' if world['temperatureClass']>=12 else temp_table['TYPE']
 
-temp_type= tables['TEMPERATURE']['TYPES'][world['temperatureType']]
+temp_type= tables['TEMPERATURE'][str(world['temperatureClass'])]
 world['temperatureAverage'] = random.randint(temp_type["MIN"],temp_type["MAX"])
 
 printClass('Temperature', world['temperatureClass'])
-#print(" Temprate Zone:", world['temperatureType'])
+#print(" Temprate Zone:", world['temperatureType']
 print(" Average Temperature:",world['temperatureAverage'])
     
 #Hydrographics
