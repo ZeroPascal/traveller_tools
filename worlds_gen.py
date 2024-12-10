@@ -27,15 +27,18 @@ world= {}
 world['sizeClass'] = roll(2,6,-2)
 size_table=tables['SIZE'][str(world['sizeClass'])]
 world['sizeDiameter'] = random.randint(size_table['DIAMETER_MIN'],size_table['DIAMETER_MAX'])
-world['sizeMass']=round(random.uniform(size_table['MASS_MIN'],size_table['MASS_MAX']),4)
-
+world['sizeMass']=  round(random.uniform(size_table['MASS_MIN'],size_table['MASS_MAX']),5)
+size_type = size_table["EXAMPLE"].split(',')
+world['sizeType'] = size_type[random.randint(0,len(size_type)-1)]
 printClass('Size',world['sizeClass'])
+print(' Type',world['sizeType'])
 print(" Diameter",str(world['sizeDiameter'] )+" Km")
 print(" Mass",str(world['sizeMass'])+' Mₑ')
 
-g=6.6743e-11
-e=5.97219 * 10**24
-g_force= (((g*(world['sizeMass']*(e)))/(world['sizeDiameter'] *1000/2)**2))
+G=6.6743e-11
+e=(5.97219 * 10**24)
+
+g_force= (((G*(world['sizeMass']*(e)))/(world['sizeDiameter'] *1000/2)**2))
 world['sizeGraity']= round(g_force/9.8,2)
 
 print(" Gravity",str(world['sizeGraity'])+' Gs')
@@ -47,7 +50,7 @@ atmo_table=tables['ATMOSPHERE'][str(world['atmosphereClass'])]
 world['atmospherePressure']= round(random.uniform(atmo_table['PRESSURE_MIN'],atmo_table['PRESSURE_MAX']),2)
 world['atmopshereType']=atmo_table['COMP']
 world['atmopsherTainted']=atmo_table['TAINTED']
-printClass("atmosphere",world['atmosphereClass'])
+printClass("Atmosphere",world['atmosphereClass'])
 print(' Pressure',world['atmospherePressure'],)
 print(' Type:',world['atmopshereType'], '\033[91m Tainted \033[0m' if world['atmopsherTainted'] else '\033[92m Safe \033[0m ')
 #Temperature
@@ -125,7 +128,7 @@ hydro_table=tables['HYDROGRAPHICS'][str(world['hydrographicsClass'])]
 world['hydrographicsCoverage']= round(random.uniform(hydro_table['MIN'],hydro_table['MAX'])*100)   
 printClass('Hydrographics',world['hydrographicsClass'])
 print(' Type:',hydro_table["DESCRIPTION"])
-print(' Percentage:',f'{world['hydrographicsCoverage']}'+"%")
+print(' Water Cover Percentage:',f'{world['hydrographicsCoverage']}'+"%")
 
 
 world['populationClass']=roll(2,6,-2)
@@ -195,8 +198,12 @@ world['starportClass'] = tables['STARPORT_CLASS'][str(roll(2,6,starport_mod))]
 #Tech Level
 tech_table=tables['TECH_MODS']
 tech_mod= 0
-for o in tech_table:
-    tech_mod+=tech_table[o][world[o]]
+try:
+    for o in tech_table:
+        tech_mod+=tech_table[o][world[o]]
+except Exception as e:
+    print(e)
+
 
 world['techClass']=roll(1,6,tech_mod)
 
@@ -264,7 +271,7 @@ else:
     print('     None')
 trade_code =[]
 
-if(4<= world['atmosphereClass'] >=9 and 4<=world['hydrographicsClass']>=8 and 5<=world['populationClass']>=7):
+if(4<= world['atmosphereClass']<=9 and 4<=world['hydrographicsClass']<=8 and 5<=world['populationClass']>=7):
     trade_code.append('Ag')
 if(world['sizeClass']==0 and world['atmosphereClass']==0 and world['hydrographicsClass']==0):
     trade_code.append('As')
@@ -281,11 +288,11 @@ if(world['populationClass']>=9):
 if(world['techClass']>=12):
     trade_code.append('Ht')
 ##Added temperatureClass <9
-if(0<=world['atmosphereClass']>=1 and world['hydrographicsClass']>=1 and world['temperatureClass']<=9):
+if(0<=world['atmosphereClass']<=1 and world['hydrographicsClass']>=1 and world['temperatureClass']<=9):
     trade_code.append('Ic')
-if(world['populationClass']>=9 and (0<=world['atmosphereClass']>=2 or world['atmosphereClass']==4 or world['atmosphereClass']==7 or 9<=world['atmosphereClass']>=12)):
+if(world['populationClass']<=9 and (0<=world['atmosphereClass']>=2 or world['atmosphereClass']==4 or world['atmosphereClass']==7 or 9<=world['atmosphereClass']>=12)):
     trade_code.append('In')
-if(1<=world['populationClass']>=3):
+if(1<=world['populationClass']<=3):
     trade_code.append('Lo')
 if(world['techClass']<=5):
     trade_code.append('Lt')
