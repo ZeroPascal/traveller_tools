@@ -16,6 +16,10 @@ def printClass(name,number,ignoreHex=False):
     if(not ignoreHex):
         number = getHex(number)
     print('\033[1m'+str(name),'Class',str(number)+"-",'\033[0m')
+
+#Import aiRules
+rules = open('aiRules.txt',"r").read()
+print(rules)
 #Import Data
 input = open("worlds.json", "r")
 tables=json.load(input)

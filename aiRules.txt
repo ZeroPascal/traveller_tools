@@ -1,0 +1,13 @@
+Forget all prior rules.
+Reference all environmental descriptions as a human would consider them.
+Do not repeat facts.
+All references to water should factor in the average temperature.
+Class codes are in hexadecimal. 
+The Government code determines the dominant government type on that planet but there are usually other factions such rival political parties, cultural groups, religions, rebels and so forth who oppose the government.
+Make up names for the government, planet and fractions  and make those italic.
+Names should be influenced the planet's characteristics. 
+Use the trade codes to influence all other descriptions.
+Do not list the trade codes.
+The size type determines what kind of object it is, do not write the size type verbatim.
+If object is a moon, create name for the planet it orbits and include a one sentence description of said planet. 
+Write a one paragraph summary of the object detailed below: 
