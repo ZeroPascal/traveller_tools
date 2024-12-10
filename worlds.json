@@ -82,7 +82,7 @@
         "11":{"INHABITANTS":"Hundreds of Billions", "DESCRIPTION":"Incredibly crowded world"},
         "12":{"INHABITANTS":"Trillions", "DESCRIPTION":"World-city"}
     },
-    "GOVERMENT":{
+    "GOVERNMENT":{
         "0":{"TYPE":"None",
             "DESCRIPTION":"No government structure. In many cases, family bonds predominate. ",
             "EXAMPLE":"Family, clan, anarchy ",
@@ -181,19 +181,19 @@
             "Fringe":{"DESCRIPTION":"Few supporters"},
             "Minor":{"DESCRIPTION":"Some supporters"},
             "Notable":{"DESCRIPTION":"Significant support, well known"},
-            "Significant":{"DESCRIPTION":"Nearly as powerful as the goverment"},
-            "Overhwelming":{"DESCRIPTION":"More powerful than the goverment"}       
+            "Significant":{"DESCRIPTION":"Nearly as powerful as the government"},
+            "Overhwelming":{"DESCRIPTION":"More powerful than the government"}       
         }
     },
     "LAW":{
-        "0":{"WEAPONDS":"Recommended", "ARMOUR":"Recommended"},
+        "0":{"WEAPONDS":"None Weaponds Recommended", "ARMOUR":"None Armour recommended"},
         "1":{"WEAPONDS":"Poison gas, explosives, undetectable weapons, WMD", "ARMOUR":"Battle Dress"},
         "2":{"WEAPONDS":"Portable energy and laser", "ARMOUR":"Combat armour"},
         "3":{"WEAPONDS":"Military grade", "ARMOUR":"Flak"},
         "4":{"WEAPONDS":"Light assult, submachine guns", "ARMOUR":"Cloth"},
         "5":{"WEAPONDS":"Personal concealable", "ARMOUR":"Mesh"},
-        "6":{"WEAPONDS":"All firearms execept shotguns & stunners; carrying weapons disouraged", "ARMOUR":""},
-        "7":{"WEAPONDS":"Shotguns", "ARMOUR":""},
+        "6":{"WEAPONDS":"All firearms execept shotguns & stunners; carrying weapons disouraged", "ARMOUR":"None"},
+        "7":{"WEAPONDS":"Shotguns", "ARMOUR":"None"},
         "8":{"WEAPONDS":"All bladed weapons, stunners", "ARMOUR":"All visible armour"},
         "9":{"WEAPONDS":"All", "ARMOUR":"All"}
     },
@@ -252,6 +252,42 @@
             "Corsair": 0
         }}
 
+    },
+    "TRADE CODES":{
+        "Ag": "Agricultural",
+        "As": "Asteroid",
+        "Ba": "Barren",
+        "Fl": "Fluid Oceans",
+        "Ga": "Garden",
+        "Hi": "High Population",
+        "Ht": "High Tech",
+        "Ic": "Ice-Capped",
+        "In": "Industrial",
+        "Lo": "Low Population",
+        "Lt": "Low Tech",
+        "Na": "Non-Agricultural",
+        "Ni": "Non-Industrial",
+        "Po": "Poor",
+        "Ri": "Rich",
+        "Va": "Vacumm",
+        "Wa": "Waterworld"
+    },
+    "TECH_MODS":{   
+        "sizeClass":         [ 2, 2, 1, 1, 1, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0],
+        "atmospherClass":   [ 1, 1, 1, 1, 0, 0, 0, 0, 0,  1,  1,  1,  1,  1,  1],
+        "hydrographicsClass":[ 1, 0, 0, 0, 0, 0, 0, 1, 2,  0,  0,  0,  0,  0,  0],
+        "populationClass":   [ 0, 1, 1, 1, 1, 1, 0, 0, 1,  2,  4,  0,  0,  0,  0],
+        "governmentClass":    [ 1, 0, 0, 0, 0, 1, 0, 2, 0,  0,  0,  0,  -2,  -2,  0],
+        "starportClass": {
+            "A": 6,
+            "B": 4,
+            "C": 2,
+            "D": 0,
+            "E": 0,
+            "F": 0,
+            "X": -4
+        }
     }
+
         
 }

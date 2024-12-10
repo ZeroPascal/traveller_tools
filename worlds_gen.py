@@ -93,7 +93,7 @@ temp_type= tables['TEMPERATURE']['TYPES'][world['temperatureType']]
 world['temperatureAverage'] = random.randint(temp_type["MIN"],temp_type["MAX"])
 
 printClass('Temperature', world['temperatureClass'])
-print(" Temprate Zone:", world['temperatureType'])
+#print(" Temprate Zone:", world['temperatureType'])
 print(" Average Tempature:",world['temperatureAverage'])
     
 #Hydrographics
@@ -134,21 +134,21 @@ world['populationNumber']= 0 if world['populationClass']==0 else random.randint(
     
 print(' Population',f'{world['populationNumber']:,}')
 
-world['govermentClass']= roll(2,6,world['populationClass']-7)
-gov_table = tables['GOVERMENT'][str(world['govermentClass'])]
-printClass('Goverment',world['govermentClass'])
+world['governmentClass']= roll(2,6,world['populationClass']-7)
+gov_table = tables['GOVERNMENT'][str(world['governmentClass'])]
+printClass('Government',world['governmentClass'])
 
 def getGovType(gov_table):
     gov_type = gov_table['TYPE'].split(',')
     return str(gov_type[len(gov_type)-1])
 
-world['govermentType']= getGovType(gov_table)
-print(' Type:',world['govermentType'])
+world['governmentType']= getGovType(gov_table)
+print(' Type:',world['governmentType'])
 
 fraction_mod=0
-if(world['govermentClass']==0 or world['govermentClass']==7):
+if(world['governmentClass']==0 or world['governmentClass']==7):
     fraction_mod+=1
-if(world['govermentClass']>=10):
+if(world['governmentClass']>=10):
     fraction_mod+=-1
 
 world['fractionCount']=roll(1,3,fraction_mod)
@@ -157,7 +157,7 @@ print(' Fractions',world['fractionCount'])
 
 fractions = []
 for f in range(world['fractionCount']):
-    fGov = tables['GOVERMENT'][str(roll(2,6))]
+    fGov = tables['GOVERNMENT'][str(roll(2,6))]
     fractions.append(
         tables['FRACTIONS'][str(roll(2,6))]+" "+getGovType(fGov)
 
@@ -165,10 +165,13 @@ for f in range(world['fractionCount']):
 world['fractions']= fractions
 for f in fractions:
     print("     ",f)
-world['lawClass']=roll(2,6,world['govermentClass']-7)
+world['lawClass']=roll(2,6,world['governmentClass']-7)
 
 printClass('Law Level',world['lawClass'])
 
+law_table=tables['LAW'][str(world['lawClass']) if world['lawClass']<=9 else str(9)]
+print(' Bannded Weaponds:',law_table['WEAPONDS'])
+print('  Bannded Armour:', law_table['ARMOUR'])
 starport_mod =0
 if world['populationClass']==10:
     starport_mod=2
@@ -181,13 +184,44 @@ else:
         case 3,4:
             starport_mod=-1
 
-#Tech Level
-world['techClass']=roll(1,6,0)
+
+
+
 #Starports
 world['starportClass'] = tables['STARPORT_CLASS'][str(roll(2,6,starport_mod))]
+
+#Tech Level
+tech_table=tables['TECH_MODS']
+tech_mod= 0
+for o in tech_table:
+    tech_mod+=tech_table[o][world[o]]
+
+world['techClass']=roll(1,6,tech_mod)
+
+#Enviromental Limits
+match world['atmospherClass']:
+    case 0,1,10,15:
+        if(world['techClass']<8):
+            world['techClass']=8 
+    case 2,3,13,14:
+          if(world['techClass']<5):
+            world['techClass']=5
+    case 4,7,9:
+          if(world['techClass']<3):
+            world['techClass']=3
+    case 11:
+        if(world['techClass']<9):
+            world['techClass']=9
+    case 12:
+        if(world['techClass']<10):
+            world['techClass']=10
+
+printClass('Tech Level',world['techClass'])
 starport_table=tables['STARPORTS'][str(world['starportClass'])]
 printClass('Starport',world['starportClass'],True)
 
+
+#Starport Faclities
 world['starportCost']=roll(1,6,0)*starport_table["COST"]
 world['starportFaclilites']=starport_table['FACILITIES']
 
@@ -215,6 +249,7 @@ if(len(world['starportFaclilites'])>0):
 else:
     print('     None')
 
+#Starport Bases
 world['starportBases']=[]
 for b in starport_table['BASES']:
     if(starport_table['BASES'][b]>0 and roll(2,6,0)>=starport_table['BASES'][b]):
@@ -231,7 +266,7 @@ if(4<= world['atmospherClass'] >=9 and 4<=world['hydrographicsClass']>=8 and 5<=
     trade_code.append('Ag')
 if(world['sizeClass']==0 and world['atmospherClass']==0 and world['hydrographicsClass']==0):
     trade_code.append('As')
-if(world['populationClass']==0 and world['govermentClass']==0 and world['lawClass']==0):
+if(world['populationClass']==0 and world['governmentClass']==0 and world['lawClass']==0):
     trade_code.append('Ba')
 if(2<=world['atmospherClass']>=9 and world['hydrographicsClass']==0):
     trade_code.append('De')
@@ -255,12 +290,20 @@ if(0<=world['atmospherClass']>=3 and 0<=world['hydrographicsClass']>=3 and world
     trade_code.append('Na')
 if(2<=world['atmospherClass']>=5 and 0<=world['hydrographicsClass']>=3):
     trade_code.append('Po')
-if((world['atmospherClass']==6 or world['atmospherClass']==8) and 6<=world['populationClass']>=8 and 4<=world['govermentClass']>=9):
+if((world['atmospherClass']==6 or world['atmospherClass']==8) and 6<=world['populationClass']>=8 and 4<=world['governmentClass']>=9):
     trade_code.append('Ri')
 if(world['atmospherClass']==0):
     trade_code.append('Va')
 if((3<=world['atmospherClass']>=9 or world['atmospherClass']>=13) and world['hydrographicsClass']>=-0):
     trade_code.append('Wa')
-    
-print('Trade Codes',trade_code)
+
+trade_table=tables['TRADE CODES']
+world['tradeCodes']= []
+for t in trade_code:
+    world['tradeCodes'].append(trade_table[t])
+print('Trade Codes')
+for t in world['tradeCodes']:
+    print(' ',t)
+
+
 
