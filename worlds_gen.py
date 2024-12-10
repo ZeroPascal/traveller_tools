@@ -10,9 +10,11 @@ def roll(dice=1,type=6, mods=0,stat_mod=0,stat_type=0):
     #print("Rolling",dice,'d',type, "Min",min,"Max",max)
     return(random.randint(min,max))
 
+def getHex(number):
+    return f'{number:x}'.upper()
 def printClass(name,number,ignoreHex=False):
     if(not ignoreHex):
-        number = f'{number:x}'.upper()
+        number = getHex(number)
     print('\033[1m'+str(name),'Class',str(number)+"-",'\033[0m')
 #Import Data
 input = open("worlds.json", "r")
@@ -278,7 +280,8 @@ if(world['populationClass']>=9):
     trade_code.append('Hi')
 if(world['techClass']>=12):
     trade_code.append('Ht')
-if(0<=world['atmospherClass']>=1 and world['hydrographicsClass']>=1):
+##Added temperatureClass <9
+if(0<=world['atmospherClass']>=1 and world['hydrographicsClass']>=1 and world['temperatureClass']<=9):
     trade_code.append('Ic')
 if(world['populationClass']>=9 and (0<=world['atmospherClass']>=2 or world['atmospherClass']==4 or world['atmospherClass']==7 or 9<=world['atmospherClass']>=12)):
     trade_code.append('In')
@@ -304,6 +307,17 @@ for t in trade_code:
 print('Trade Codes')
 for t in world['tradeCodes']:
     print(' ',t)
+
+
+print('-------')
+code= world['starportClass']+getHex(world['sizeClass'])+getHex(world['atmospherClass'])+getHex(world['hydrographicsClass'])+getHex(world['populationClass'])+getHex(world['governmentClass'])+getHex(world['lawClass'])+getHex(world['techClass'])
+code+='-'
+
+for n in world['starportBases']:
+    code+= n[0]
+
+print(code)
+
 
 
 
