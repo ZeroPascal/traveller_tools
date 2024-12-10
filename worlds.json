@@ -1,167 +1,167 @@
 {
     "SIZE":{
-        "0":{"DIAMETER_MIN": 1, "DIAMETER_MAX":1000, "MASS_MIN": 0.001, "MASS_MAX":0.003, "EXAMPLE":"Astroid, orbital complex","Gs":0.001},
-        "1":{"DIAMETER_MIN": 1001, "DIAMETER_MAX":1600, "MASS_MIN": 0.002, "MASS_MAX":0.005, "EXAMPLE":"Triton","Gs":0.05},
-        "2":{"DIAMETER_MIN": 1601, "DIAMETER_MAX":3200, "MASS_MIN": 0.005, "MASS_MAX":0.01, "EXAMPLE":"Luna, Eurpoa","Gs":0.15},
-        "3":{"DIAMETER_MIN": 3201, "DIAMETER_MAX":4800, "MASS_MIN": 0.009, "MASS_MAX":0.05, "EXAMPLE":"Mercury, Ganymede","Gs":0.25},
-        "4":{"DIAMETER_MIN": 4801, "DIAMETER_MAX":6400, "MASS_MIN": 0.09, "MASS_MAX":0.15, "EXAMPLE":"Mars","Gs":0.35},
-        "5":{"DIAMETER_MIN": 6401, "DIAMETER_MAX":8000, "MASS_MIN": 0.1, "MASS_MAX":0.4, "EXAMPLE":"","Gs":0.45},
-        "6":{"DIAMETER_MIN": 8001, "DIAMETER_MAX":9600, "MASS_MIN": 0.2, "MASS_MAX":0.8, "EXAMPLE":"","Gs":0.7},
-        "7":{"DIAMETER_MIN": 9601, "DIAMETER_MAX":11200, "MASS_MIN": 0.7, "MASS_MAX":1000, "EXAMPLE":"","Gs":0.9},
-        "8":{"DIAMETER_MIN": 11201, "DIAMETER_MAX":12800, "MASS_MIN": 0.9, "MASS_MAX":1.1, "EXAMPLE":"Earth","Gs":1},
-        "9":{"DIAMETER_MIN": 12801, "DIAMETER_MAX":14400, "MASS_MIN": 1, "MASS_MAX":1.25, "EXAMPLE":"","Gs":1.25},
-        "10":{"DIAMETER_MIN": 14401, "DIAMETER_MAX":16000, "MASS_MIN": 1.2, "MASS_MAX":1.5, "EXAMPLE":"","Gs":1.4}
+        "0":{"DIAMETER_MIN": 1, "DIAMETER_MAX":1000, "MASS_MIN": 0.001, "MASS_MAX":0.003, "EXAMPLE": "Asteroid, orbital complex","Gs":0.001},
+        "1":{"DIAMETER_MIN": 1001, "DIAMETER_MAX":1600, "MASS_MIN": 0.002, "MASS_MAX":0.005, "EXAMPLE": "Triton","Gs":0.05},
+        "2":{"DIAMETER_MIN": 1601, "DIAMETER_MAX":3200, "MASS_MIN": 0.005, "MASS_MAX":0.01, "EXAMPLE": "Luna, Eurpoa","Gs":0.15},
+        "3":{"DIAMETER_MIN": 3201, "DIAMETER_MAX":4800, "MASS_MIN": 0.009, "MASS_MAX":0.05, "EXAMPLE": "Mercury, Ganymede","Gs":0.25},
+        "4":{"DIAMETER_MIN": 4801, "DIAMETER_MAX":6400, "MASS_MIN": 0.09, "MASS_MAX":0.15, "EXAMPLE": "Mars","Gs":0.35},
+        "5":{"DIAMETER_MIN": 6401, "DIAMETER_MAX":8000, "MASS_MIN": 0.1, "MASS_MAX":0.4, "EXAMPLE": "","Gs":0.45},
+        "6":{"DIAMETER_MIN": 8001, "DIAMETER_MAX":9600, "MASS_MIN": 0.2, "MASS_MAX":0.8, "EXAMPLE": "","Gs":0.7},
+        "7":{"DIAMETER_MIN": 9601, "DIAMETER_MAX":11200, "MASS_MIN": 0.7, "MASS_MAX":1000, "EXAMPLE": "","Gs":0.9},
+        "8":{"DIAMETER_MIN": 11201, "DIAMETER_MAX":12800, "MASS_MIN": 0.9, "MASS_MAX":1.1, "EXAMPLE": "Earth","Gs":1},
+        "9":{"DIAMETER_MIN": 12801, "DIAMETER_MAX":14400, "MASS_MIN": 1, "MASS_MAX":1.25, "EXAMPLE": "","Gs":1.25},
+        "10":{"DIAMETER_MIN": 14401, "DIAMETER_MAX":16000, "MASS_MIN": 1.2, "MASS_MAX":1.5, "EXAMPLE": "","Gs":1.4}
 
     },
     "ATMOSPHERE":{
-        "0":{"COMP":"None", "TAINTED":false, "EXAMPLE":"Moon","PRESSURE_MIN":0.00,"PRESSURE_MAX":0,"GEAR":"Vacc Suit"},
-        "1":{"COMP":"Trace", "TAINTED":false, "EXAMPLE":"Mars","PRESSURE_MIN":0.01,"PRESSURE_MAX":0.09,"GEAR":"Vacc Suit"},
-        "2":{"COMP":"Very Thin","TAINTED":true, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":0.42,"GEAR":"Respirator, Filter"},
-        "3":{"COMP":"Very Thin","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":0.42,"GEAR":"Respirator"},
-        "4":{"COMP":"Thin","TAINTED":true, "EXAMPLE":"","PRESSURE_MIN":0.43,"PRESSURE_MAX":0.7,"GEAR":"Filter"},
-        "5":{"COMP":"Thin","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.43,"PRESSURE_MAX":0.7,"GEAR":""},
-        "6":{"COMP":"Standard","TAINTED":false, "EXAMPLE":"Earth","PRESSURE_MIN":0.71,"PRESSURE_MAX":1.49,"GEAR":""},
-        "7":{"COMP":"Standard","TAINTED":true, "EXAMPLE":"","PRESSURE_MIN":0.71,"PRESSURE_MAX":1.49,"GEAR":"Filter"},
-        "8":{"COMP":"Dense","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":1.5,"PRESSURE_MAX":2.49,"GEAR":""},
-        "9":{"COMP":"Dense","TAINTED":true, "EXAMPLE":"","PRESSURE_MIN":1.5,"PRESSURE_MAX":2.49,"GEAR":"Filter"},
-        "10":{"COMP":"Exotic","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR":"Air Supply"},
-        "11":{"COMP":"Corrosive","TAINTED":false, "EXAMPLE":"Venus","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR":"Vacc Suit"},
-        "12":{"COMP":"Insidious","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR":"Vacc Suit"},
-        "13":{"COMP":"Very Dense","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":2.5,"PRESSURE_MAX":6,"GEAR":""},
-        "14":{"COMP":"Low","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":0.5,"GEAR":"Respirator"},
-        "15":{"COMP":"Unusal","TAINTED":false, "EXAMPLE":"","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR":""}
+        "0":{"COMP": "None", "TAINTED": false, "EXAMPLE": "Moon","PRESSURE_MIN":0.00,"PRESSURE_MAX":0,"GEAR": "Vacc Suit"},
+        "1":{"COMP": "Trace", "TAINTED": false, "EXAMPLE": "Mars","PRESSURE_MIN":0.01,"PRESSURE_MAX":0.09,"GEAR": "Vacc Suit"},
+        "2":{"COMP": "Very Thin", "TAINTED": true, "EXAMPLE": "","PRESSURE_MIN":0.1,"PRESSURE_MAX":0.42,"GEAR": "Respirator, Filter"},
+        "3":{"COMP": "Very Thin", "TAINTED": false, "EXAMPLE": "","PRESSURE_MIN":0.1,"PRESSURE_MAX":0.42,"GEAR": "Respirator"},
+        "4":{"COMP": "Thin", "TAINTED": true, "EXAMPLE": "","PRESSURE_MIN":0.43,"PRESSURE_MAX":0.7,"GEAR": "Filter"},
+        "5":{"COMP": "Thin", "TAINTED": false, "EXAMPLE": "","PRESSURE_MIN":0.43,"PRESSURE_MAX":0.7,"GEAR": ""},
+        "6":{"COMP": "Standard", "TAINTED": false, "EXAMPLE": "Earth","PRESSURE_MIN":0.71,"PRESSURE_MAX":1.49,"GEAR": ""},
+        "7":{"COMP": "Standard", "TAINTED": true, "EXAMPLE": "","PRESSURE_MIN":0.71,"PRESSURE_MAX":1.49,"GEAR": "Filter"},
+        "8":{"COMP": "Dense", "TAINTED": false, "EXAMPLE": "","PRESSURE_MIN":1.5,"PRESSURE_MAX":2.49,"GEAR": ""},
+        "9":{"COMP": "Dense", "TAINTED": true, "EXAMPLE": "","PRESSURE_MIN":1.5,"PRESSURE_MAX":2.49,"GEAR": "Filter"},
+        "10":{"COMP": "Exotic", "TAINTED": false, "EXAMPLE": "","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR": "Air Supply"},
+        "11":{"COMP": "Corrosive", "TAINTED": false, "EXAMPLE": "Venus","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR": "Vacc Suit"},
+        "12":{"COMP": "Insidious", "TAINTED": false, "EXAMPLE": "","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR": "Vacc Suit"},
+        "13":{"COMP": "Very Dense", "TAINTED": false, "EXAMPLE": "","PRESSURE_MIN":2.5,"PRESSURE_MAX":6,"GEAR": ""},
+        "14":{"COMP": "Low", "TAINTED": false, "EXAMPLE": "","PRESSURE_MIN":0.1,"PRESSURE_MAX":0.5,"GEAR": "Respirator"},
+        "15":{"COMP": "Unusual", "TAINTED": false, "EXAMPLE": "","PRESSURE_MIN":0.1,"PRESSURE_MAX":2.49,"GEAR": ""}
     },
     "HYDROGRAPHICS":{
-        "0":{"MIN":0,"MAX":0.05,"DESCRIPTION":"Desert"},
-        "1":{"MIN":0.06,"MAX":0.15,"DESCRIPTION":"Dry"},
-        "2":{"MIN":0.16,"MAX":0.25,"DESCRIPTION":"A few small areas"},
-        "3":{"MIN":0.26,"MAX":0.35,"DESCRIPTION":"Small Seas and Oceans"},
-        "4":{"MIN":0.36,"MAX":0.45,"DESCRIPTION":"Wet"},
-        "5":{"MIN":0.46,"MAX":0.55,"DESCRIPTION":"A large ocean"},
-        "6":{"MIN":0.56,"MAX":0.65,"DESCRIPTION":"Large oceans"},
-        "7":{"MIN":0.66,"MAX":0.75,"DESCRIPTION":"Earth-like"},
-        "8":{"MIN":0.76,"MAX":0.85,"DESCRIPTION":"Few islands and archipelagos"},
-        "9":{"MIN":0.86,"MAX":0.95,"DESCRIPTION":"Almost entirely water"},
-        "10":{"MIN":0.96,"MAX":1,"DESCRIPTION":"Waterwrold"}
+        "0":{"MIN":0,"MAX":0.05,"DESCRIPTION": "Desert"},
+        "1":{"MIN":0.06,"MAX":0.15,"DESCRIPTION": "Dry"},
+        "2":{"MIN":0.16,"MAX":0.25,"DESCRIPTION": "A few small areas"},
+        "3":{"MIN":0.26,"MAX":0.35,"DESCRIPTION": "Small Seas and Oceans"},
+        "4":{"MIN":0.36,"MAX":0.45,"DESCRIPTION": "Wet"},
+        "5":{"MIN":0.46,"MAX":0.55,"DESCRIPTION": "A large ocean"},
+        "6":{"MIN":0.56,"MAX":0.65,"DESCRIPTION": "Large oceans"},
+        "7":{"MIN":0.66,"MAX":0.75,"DESCRIPTION": "Earth-like"},
+        "8":{"MIN":0.76,"MAX":0.85,"DESCRIPTION": "Few islands and archipelagos"},
+        "9":{"MIN":0.86,"MAX":0.95,"DESCRIPTION": "Almost entirely water"},
+        "10":{"MIN":0.96,"MAX":1,"DESCRIPTION": "Waterwrold"}
         
     },
     "TEMPERATURE":{
-        "0":{"TYPE":"Frozen"},
-        "1":{"TYPE":"Frozen"},
-        "2":{"TYPE":"Frozen"},
-        "3":{"TYPE":"Cold"},
-        "4":{"TYPE":"Cold"},
-        "5":{"TYPE":"Temperate"},
-        "6":{"TYPE":"Temperate"},
-        "7":{"TYPE":"Temperate"},
-        "8":{"TYPE":"Temperate"},
-        "9":{"TYPE":"Temperate"},
-        "10":{"TYPE":"Hot"},
-        "11":{"TYPE":"Hot"},
-        "12":{"TYPE":"Boiling"},
+        "0":{"TYPE": "Frozen"},
+        "1":{"TYPE": "Frozen"},
+        "2":{"TYPE": "Frozen"},
+        "3":{"TYPE": "Cold"},
+        "4":{"TYPE": "Cold"},
+        "5":{"TYPE": "Temperate"},
+        "6":{"TYPE": "Temperate"},
+        "7":{"TYPE": "Temperate"},
+        "8":{"TYPE": "Temperate"},
+        "9":{"TYPE": "Temperate"},
+        "10":{"TYPE": "Hot"},
+        "11":{"TYPE": "Hot"},
+        "12":{"TYPE": "Boiling"},
         "TYPES":{
-            "Frozen":{"MIN": -110, "MAX": -51, "AVG_TEMP":-51, "DESCRIPTION":"Frozen world. No liquid water, very dry atmosphere." },
+            "Frozen":{"MIN": -110, "MAX": -51, "AVG_TEMP":-51, "DESCRIPTION": "Frozen world. No liquid water, very dry atmosphere." },
             "Cold":{"MIN": -50, "MAX": 0,"AVG_TEMP":-25, "DESCRIPTION": "Icy world. Little liquid water, extensive ice caps, few clouds."},
-            "Temperate":{"MIN": 1, "MAX": 30,"AVG_TEMP":15, "DESCRIPTION":"Temperate world. Earth-like. Liquid & vaporised water are common, moderate ice caps."},
+            "Temperate":{"MIN": 1, "MAX": 30,"AVG_TEMP":15, "DESCRIPTION": "Temperate world. Earth-like. Liquid & vaporized water are common, moderate ice caps."},
             "Hot":{"MIN": 31, "MAX": 80,"AVG_TEMP":45, "DESCRIPTION": "Hot world. Small or no ice caps, little liquid water. Most water in the form of clouds."},
             "Boiling":{"MIN": 81, "MAX": 99,"AVG_TEMP":45, "DESCRIPTION": "Boiling world. No ice caps, little liquid water"}
         }
     },
     "POPULATION":{
-        "0":{"INHABITANTS":"None", "DESCRIPTION":""},
-        "1":{"INHABITANTS":"Few", "DESCRIPTION":"A tiny farmsted or a single family"},
-        "2":{"INHABITANTS":"Hundreds", "DESCRIPTION":"A village"},
-        "3":{"INHABITANTS":"Thousands", "DESCRIPTION":""},
-        "4":{"INHABITANTS":"Tens of Thousands", "DESCRIPTION":"Small town"},
-        "5":{"INHABITANTS":"Hundreds of Thousands", "DESCRIPTION":"Average City"},
-        "6":{"INHABITANTS":"Millions", "DESCRIPTION":""},
-        "7":{"INHABITANTS":"Tens of Millions", "DESCRIPTION":"Large City"},
-        "8":{"INHABITANTS":"Hundreds of Millions", "DESCRIPTION":""},
-        "9":{"INHABITANTS":"Billions", "DESCRIPTION":"Present day Earth"},
-        "10":{"INHABITANTS":"Tens of Billions", "DESCRIPTION":""},
-        "11":{"INHABITANTS":"Hundreds of Billions", "DESCRIPTION":"Incredibly crowded world"},
-        "12":{"INHABITANTS":"Trillions", "DESCRIPTION":"World-city"}
+        "0":{"INHABITANTS": "None", "DESCRIPTION": ""},
+        "1":{"INHABITANTS": "Few", "DESCRIPTION": "A tiny farmstead or a single family"},
+        "2":{"INHABITANTS": "Hundreds", "DESCRIPTION": "A village"},
+        "3":{"INHABITANTS": "Thousands", "DESCRIPTION": ""},
+        "4":{"INHABITANTS": "Tens of Thousands", "DESCRIPTION": "Small town"},
+        "5":{"INHABITANTS": "Hundreds of Thousands", "DESCRIPTION": "Average City"},
+        "6":{"INHABITANTS": "Millions", "DESCRIPTION": ""},
+        "7":{"INHABITANTS": "Tens of Millions", "DESCRIPTION": "Large City"},
+        "8":{"INHABITANTS": "Hundreds of Millions", "DESCRIPTION": ""},
+        "9":{"INHABITANTS": "Billions", "DESCRIPTION": "Present day Earth"},
+        "10":{"INHABITANTS": "Tens of Billions", "DESCRIPTION": ""},
+        "11":{"INHABITANTS": "Hundreds of Billions", "DESCRIPTION": "Incredibly crowded world"},
+        "12":{"INHABITANTS": "Trillions", "DESCRIPTION": "World-city"}
     },
     "GOVERNMENT":{
-        "0":{"TYPE":"None",
-            "DESCRIPTION":"No government structure. In many cases, family bonds predominate. ",
-            "EXAMPLE":"Family, clan, anarchy ",
-            "CONTRABAND":"None"
+        "0":{"TYPE": "None",
+            "DESCRIPTION": "No government structure. In many cases, family bonds predominate. ",
+            "EXAMPLE": "Family, clan, anarchy ",
+            "CONTRABAND": "None"
         },
-        "1":{"TYPE":"Company,Corporation",
-            "DESCRIPTION":"Ruling functions are assumed by a company managerial elite and most citizenry are company employees or dependents.",
-            "EXAMPLE":"Corporate outpost, asteroid mine, feudal domain",
-            "CONTRABAND":"Weapons, Drugs, Travellers"
+        "1":{"TYPE": "Company, Corporation",
+            "DESCRIPTION": "Ruling functions are assumed by a company managerial elite and most citizenry are company employees or dependents.",
+            "EXAMPLE": "Corporate outpost, asteroid mine, feudal domain",
+            "CONTRABAND": " Weapons, Drugs, Travellers"
         },
-        "2":{"TYPE":"Participating Democarcy",
-            "DESCRIPTION":"Ruling functions are reached by the advice and consent of the citizenry directly.",
-            "EXAMPLE":"Collective, Tribal council, Comm-linked Consensus",
-            "CONTRABAND":"Drugs"
+        "2":{"TYPE": "Participating Democarcy",
+            "DESCRIPTION": "Ruling functions are reached by the advice and consent of the citizenry directly.",
+            "EXAMPLE": "Collective, Tribal council, Comm-linked Consensus",
+            "CONTRABAND": "Drugs"
         },
-        "3":{"TYPE":"Self-Perpetuating Oligarchy",
-            "DESCRIPTION":"Ruling functions are performed by a restricted minority, with little or no input from the mass of citizenry.",
-            "EXAMPLE":"Plutocracy, Hereditary ruling caste",
-            "CONTRABAND":"Technology, Weapons, Travellers"
+        "3":{"TYPE": "Self-Perpetuating Oligarchy",
+            "DESCRIPTION": "Ruling functions are performed by a restricted minority, with little or no input from the mass of citizenry.",
+            "EXAMPLE": "Plutocracy, Hereditary ruling caste",
+            "CONTRABAND": "Technology, Weapons, Travellers"
         },
-        "4":{"TYPE":"Representative Democracy",
-            "DESCRIPTION":"Ruling functions are performed by elected representatives.",
-            "EXAMPLE":"Republic, Democracy",
-            "CONTRABAND":"Drugs, Weapons, Psionics"
+        "4":{"TYPE": "Representative Democracy",
+            "DESCRIPTION": "Ruling functions are performed by elected representatives.",
+            "EXAMPLE": "Republic, Democracy",
+            "CONTRABAND": "Drugs, Weapons, Psionics"
         },
-        "5":{"TYPE":"Feudal Technocracy",
-            "DESCRIPTION":"Ruling functions are performed by specific individuals for persons who agree to be ruled by them. Relationships are based on the performance of technical activities that are mutually beneficial.",
-            "EXAMPLE":"Those with access to advanced technology tend to have higher social status",
-            "CONTRABAND":"Technology, Weapons, Computers"
+        "5":{"TYPE": "Feudal Technocracy",
+            "DESCRIPTION": "Ruling functions are performed by specific individuals for persons who agree to be ruled by them. Relationships are based on the performance of technical activities that are mutually beneficial.",
+            "EXAMPLE": "Those with access to advanced technology tend to have higher social status",
+            "CONTRABAND": "Technology, Weapons, Computers"
         },
-        "6":{"TYPE":"Captive Government",
-            "DESCRIPTION":"Ruling functions are performed by an imposed leadership answerable to an outside group.",
-            "EXAMPLE":"A colony, Conquered area",
-            "CONTRABAND":"Weapons,Technology, Travellers"
+        "6":{"TYPE": "Captive Government",
+            "DESCRIPTION": "Ruling functions are performed by an imposed leadership answerable to an outside group.",
+            "EXAMPLE": "A colony, Conquered area",
+            "CONTRABAND": "Weapons, Technology, Travellers"
         },
-        "7":{"TYPE":"Balkanisation",
-            "DESCRIPTION":"No central authority exists; rival governments complete for control. Law level refers to the government nearest the starport.",
-            "EXAMPLE":"Multiple governments, Civil war",
-            "CONTRABAND":"Varies"
+        "7":{"TYPE": "Balkanisation",
+            "DESCRIPTION": "No central authority exists; rival governments complete for control. Law level refers to the government nearest the Starport.",
+            "EXAMPLE": "Multiple governments, Civil war",
+            "CONTRABAND": "Varies"
         },
-        "8":{"TYPE":"Civil Service Bureaucracy",
-            "DESCRIPTION":"Ruling functions are performed by government agencies employing individuals selected for their expertise.",
-            "EXAMPLE":"Technocracy, Communism",
-            "CONTRABAND":"Technocracy, Communism Drugs, Weapons"
+        "8":{"TYPE": "Civil Service Bureaucracy",
+            "DESCRIPTION": "Ruling functions are performed by government agencies employing individuals selected for their expertise.",
+            "EXAMPLE": "Technocracy, Communism",
+            "CONTRABAND": "Technocracy, Communism Drugs, Weapons"
         },
-        "9":{"TYPE":"Impersonal Bureaucracy",
-            "DESCRIPTION":"Ruling functions are performed by agencies that have become insulated from the governed citizens.",
-            "EXAMPLE":"Entrenched castes of bureaucrats, Decaying Empire",
-            "CONTRABAND":"Technology, Weapons, Drugs, Travellers, Psionics"
+        "9":{"TYPE": "Impersonal Bureaucracy",
+            "DESCRIPTION": "Ruling functions are performed by agencies that have become insulated from the governed citizens.",
+            "EXAMPLE": "Entrenched castes of bureaucrats, Decaying Empire",
+            "CONTRABAND": "Technology, Weapons, Drugs, Travellers, Psionics"
         },
-        "10":{"TYPE":"Charismatic Dictator",
-            "DESCRIPTION":"Ruling functions are performed by agencies directed by a single leader who enjoys the overwhelming confidence of the citizens.",
-            "EXAMPLE":"Revolutionary leader, Messiah, Emperor",
-            "CONTRABAND":"None"
+        "10":{"TYPE": "Charismatic Dictator",
+            "DESCRIPTION": "Ruling functions are performed by agencies directed by a single leader who enjoys the overwhelming confidence of the citizens.",
+            "EXAMPLE": "Revolutionary leader, Messiah, Emperor",
+            "CONTRABAND": "None"
         },
-        "11":{"TYPE":"Non-Charismatic Leader",
-            "DESCRIPTION":"A previous charismatic dictator has been replaced by a leader through normal channels.",
-            "EXAMPLE":"Military dictatorship, Hereditary kingship",
-            "CONTRABAND":"Weapons, Technology, Computers"
+        "11":{"TYPE": "Non-Charismatic Leader",
+            "DESCRIPTION": "A previous charismatic dictator has been replaced by a leader through normal channels.",
+            "EXAMPLE": "Military dictatorship, Hereditary kingship",
+            "CONTRABAND": "Weapons, Technology, Computers"
         },
-        "12":{"TYPE":"Charismatic Oligarchy",
-            "DESCRIPTION":"Ruling functions are performed by a select group of members of an organization or class that enjoys the overwhelming confidence of the citizenry.",
-            "EXAMPLE":"Junta, Revolutionary council",
-            "CONTRABAND":"Weapons"
+        "12":{"TYPE": "Charismatic Oligarchy",
+            "DESCRIPTION": "Ruling functions are performed by a select group of members of an organization or class that enjoys the overwhelming confidence of the citizenry.",
+            "EXAMPLE": "Junta, Revolutionary council",
+            "CONTRABAND": "Weapons"
         },
-        "13":{"TYPE":"Religious Dictatorship",
-            "DESCRIPTION":"Ruling functions are performed by a religious organization without regard to the specific individual needs of the citizenry.",
-            "EXAMPLE":"Cult, Transcendent philosophy, Group Mind",
-            "CONTRABAND":"Varies"
+        "13":{"TYPE": "Religious Dictatorship",
+            "DESCRIPTION": "Ruling functions are performed by a religious organization without regard to the specific individual needs of the citizenry.",
+            "EXAMPLE": "Cult, Transcendent philosophy, Group Mind",
+            "CONTRABAND": "Varies"
         },
-        "14":{"TYPE":"Religious Autocracy",
-            "DESCRIPTION":"Government by a single religious leader having absolute power over the citizenry.",
-            "EXAMPLE":"Messiah",
-            "CONTRABAND":"Varies"
+        "14":{"TYPE": "Religious Autocracy",
+            "DESCRIPTION": "Government by a single religious leader having absolute power over the citizenry.",
+            "EXAMPLE": "Messiah",
+            "CONTRABAND": "Varies"
         },
-        "15":{"TYPE":"Totalitarian Oligarchy",
-            "DESCRIPTION":"Government by an all-powerful minority which maintains absolute control through widespread coercion and oppression.",
-            "EXAMPLE":"World church, Ruthless corporation",
-            "CONTRABAND":"Varies"
+        "15":{"TYPE": "Totalitarian Oligarchy",
+            "DESCRIPTION": "Government by an all-powerful minority which maintains absolute control through widespread coercion and oppression.",
+            "EXAMPLE": "World church, Ruthless corporation",
+            "CONTRABAND": "Varies"
         }
     },
     "FRACTIONS":{
@@ -177,75 +177,75 @@
         "11": "Significant",
         "12": "Overwhelming",
         "TYPES":{
-            "Obscure":{"DESCRIPTION":"Few have heard of them, no popular support"},
-            "Fringe":{"DESCRIPTION":"Few supporters"},
-            "Minor":{"DESCRIPTION":"Some supporters"},
-            "Notable":{"DESCRIPTION":"Significant support, well known"},
-            "Significant":{"DESCRIPTION":"Nearly as powerful as the government"},
-            "Overhwelming":{"DESCRIPTION":"More powerful than the government"}       
+            "Obscure":{"DESCRIPTION": "Few have heard of them, no popular support"},
+            "Fringe":{"DESCRIPTION": "Few supporters"},
+            "Minor":{"DESCRIPTION": "Some supporters"},
+            "Notable":{"DESCRIPTION": "Significant support, well known"},
+            "Significant":{"DESCRIPTION": "Nearly as powerful as the government"},
+            "Overhwelming":{"DESCRIPTION": "More powerful than the government"}       
         }
     },
     "LAW":{
-        "0":{"WEAPONDS":"None Weaponds Recommended", "ARMOUR":"None Armour recommended"},
-        "1":{"WEAPONDS":"Poison gas, explosives, undetectable weapons, WMD", "ARMOUR":"Battle Dress"},
-        "2":{"WEAPONDS":"Portable energy and laser", "ARMOUR":"Combat armour"},
-        "3":{"WEAPONDS":"Military grade", "ARMOUR":"Flak"},
-        "4":{"WEAPONDS":"Light assult, submachine guns", "ARMOUR":"Cloth"},
-        "5":{"WEAPONDS":"Personal concealable", "ARMOUR":"Mesh"},
-        "6":{"WEAPONDS":"All firearms execept shotguns & stunners; carrying weapons disouraged", "ARMOUR":"None"},
-        "7":{"WEAPONDS":"Shotguns", "ARMOUR":"None"},
-        "8":{"WEAPONDS":"All bladed weapons, stunners", "ARMOUR":"All visible armour"},
-        "9":{"WEAPONDS":"All", "ARMOUR":"All"}
+        "0":{"WEAPONS": "None Weapons Recommended", "ARMOUR": "None Armour recommended"},
+        "1":{"WEAPONS": "Poison gas, explosives, undetectable weapons, WMD", "ARMOUR": "Battle Dress"},
+        "2":{"WEAPONS": "Portable energy and laser", "ARMOUR": "Combat armour"},
+        "3":{"WEAPONS": "Military grade", "ARMOUR": "Flak"},
+        "4":{"WEAPONS": "Light assult, submachine guns", "ARMOUR": "Cloth"},
+        "5":{"WEAPONS": "Personal concealable", "ARMOUR": "Mesh"},
+        "6":{"WEAPONS": "All firearms execept shotguns & stunners; carrying weapons disouraged", "ARMOUR": "None"},
+        "7":{"WEAPONS": "Shotguns", "ARMOUR": "None"},
+        "8":{"WEAPONS": "All bladed weapons, stunners", "ARMOUR": "All visible armour"},
+        "9":{"WEAPONS": "All", "ARMOUR": "All"}
     },
     "STARPORT_CLASS":{
-        "0":"X",
-        "1":"X",
-        "2":"X",
-        "3":"E",
-        "4":"E",
-        "5":"D",
-        "6":"D",
-        "7":"C",
-        "8":"C",
-        "9":"B",
-        "10":"B",
-        "11":"A",
-        "12":"A",
-        "13":"A",
-        "14":"A"
+        "0": "X",
+        "1": "X",
+        "2": "X",
+        "3": "E",
+        "4": "E",
+        "5": "D",
+        "6": "D",
+        "7": "C",
+        "8": "C",
+        "9": "B",
+        "10": "B",
+        "11": "A",
+        "12": "A",
+        "13": "A",
+        "14": "A"
     },
     "STARPORTS":{
-        "X":{"QUALITY": "No Starport", "COST": 0, "FULE":"None", "FACILITIES": [], "HIGHPORT": 0, "BASES":{
+        "X":{"QUALITY": "No Starport", "COST": 0, "FULE": "None", "FACILITIES": [], "HIGHPORT": 0, "BASES":{
             "Military": 0,
             "Naval": 0,
             "Scout": 0,
             "Corsair": 10
         }},
-        "E":{"QUALITY": "Frontier", "COST": 0, "FULE":"None", "FACILITIES": [], "HIGHPORT": 0, "BASES":{
+        "E":{"QUALITY": "Frontier", "COST": 0, "FULE": "None", "FACILITIES": [], "HIGHPORT": 0, "BASES":{
             "Military": 0,
             "Naval": 0,
             "Scout": 0,
             "Corsair": 10
         }},
-        "D":{"QUALITY": "Poor", "COST": 10, "FULE":"Unrefined", "FACILITIES": ["Limited Repair"], "HIGHPORT": 12, "BASES":{
+        "D":{"QUALITY": "Poor", "COST": 10, "FULE": "Unrefined", "FACILITIES": ["Limited Repair"], "HIGHPORT": 12, "BASES":{
             "Military": 0,
             "Naval": 0,
             "Scout": 8,
             "Corsair": 12
         }},
-        "C":{"QUALITY": "Routine", "COST":100, "FULE":"Unrefined", "FACILITIES": ["Shipyard (Small carft)","Repair"], "HIGHPORT": 10, "BASES":{
+        "C":{"QUALITY": "Routine", "COST":100, "FULE": "Unrefined", "FACILITIES": ["Shipyard (Small craft)","Repair"], "HIGHPORT": 10, "BASES":{
             "Military": 10,
             "Naval": 0,
             "Scout": 9,
             "Corsair": 10
         }},
-        "B":{"QUALITY": "Good", "COST":500,"FULE":"Refined", "FACILITIES": ["Shipyard (Spacecraft)","Repair"], "HIGHPORT": 8, "BASES":{
+        "B":{"QUALITY": "Good", "COST":500,"FULE": "Refined", "FACILITIES": ["Shipyard (Spacecraft)","Repair"], "HIGHPORT": 8, "BASES":{
             "Military": 8,
             "Naval": 8,
             "Scout": 9,
             "Corsair": 0
         }},
-        "A":{"QUALITY": "Excellent", "COST":1000,"FULE":"Refined", "FACILITIES": ["Shipyard (all)","Repair"], "HIGHPORT": 6, "BASES":{
+        "A":{"QUALITY": "Excellent", "COST":1000,"FULE": "Refined", "FACILITIES": ["Shipyard (all)","Repair"], "HIGHPORT": 6, "BASES":{
             "Military": 8,
             "Naval": 8,
             "Scout": 10,
@@ -257,6 +257,7 @@
         "Ag": "Agricultural",
         "As": "Asteroid",
         "Ba": "Barren",
+        "De": "Desert",
         "Fl": "Fluid Oceans",
         "Ga": "Garden",
         "Hi": "High Population",
@@ -269,12 +270,12 @@
         "Ni": "Non-Industrial",
         "Po": "Poor",
         "Ri": "Rich",
-        "Va": "Vacumm",
+        "Va": "Vacuum",
         "Wa": "Waterworld"
     },
     "TECH_MODS":{   
         "sizeClass":         [ 2, 2, 1, 1, 1, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0],
-        "atmospherClass":   [ 1, 1, 1, 1, 0, 0, 0, 0, 0,  1,  1,  1,  1,  1,  1],
+        "atmosphereClass":   [ 1, 1, 1, 1, 0, 0, 0, 0, 0,  1,  1,  1,  1,  1,  1],
         "hydrographicsClass":[ 1, 0, 0, 0, 0, 0, 0, 1, 2,  0,  0,  0,  0,  0,  0],
         "populationClass":   [ 0, 1, 1, 1, 1, 1, 0, 0, 1,  2,  4,  0,  0,  0,  0],
         "governmentClass":    [ 1, 0, 0, 0, 0, 1, 0, 2, 0,  0,  0,  0,  -2,  -2,  0],
@@ -291,3 +292,5 @@
 
         
 }
+
+

@@ -42,19 +42,19 @@ print(" Gravity",str(world['sizeGraity'])+' Gs')
 
 #Atmo, Side Dependat 
 
-world['atmospherClass']= roll(2,6,world['sizeClass']-7)
-atmo_table=tables['ATMOSPHERE'][str(world['atmospherClass'])]
-world['atmospherPressure']= round(random.uniform(atmo_table['PRESSURE_MIN'],atmo_table['PRESSURE_MAX']),2)
+world['atmosphereClass']= roll(2,6,world['sizeClass']-7)
+atmo_table=tables['ATMOSPHERE'][str(world['atmosphereClass'])]
+world['atmospherePressure']= round(random.uniform(atmo_table['PRESSURE_MIN'],atmo_table['PRESSURE_MAX']),2)
 world['atmopshereType']=atmo_table['COMP']
 world['atmopsherTainted']=atmo_table['TAINTED']
-printClass("Atmospher",world['atmospherClass'])
-print(' Pressure',world['atmospherPressure'],)
+printClass("atmosphere",world['atmosphereClass'])
+print(' Pressure',world['atmospherePressure'],)
 print(' Type:',world['atmopshereType'], '\033[91m Tainted \033[0m' if world['atmopsherTainted'] else '\033[92m Safe \033[0m ')
-#Tempature
+#Temperature
 
 temp_mod= 0
 
-match world['atmospherClass']:
+match world['atmosphereClass']:
     case 0,1:
         temp_mod=0
     case 2,3:
@@ -96,7 +96,7 @@ world['temperatureAverage'] = random.randint(temp_type["MIN"],temp_type["MAX"])
 
 printClass('Temperature', world['temperatureClass'])
 #print(" Temprate Zone:", world['temperatureType'])
-print(" Average Tempature:",world['temperatureAverage'])
+print(" Average Temperature:",world['temperatureAverage'])
     
 #Hydrographics
 
@@ -108,13 +108,13 @@ if(world['sizeClass']>1):
     hydro_mod=-7
     #Atmo Exclusion
     try:
-        if([0,1,10,15].index(world['atmospherClass'])):
+        if([0,1,10,15].index(world['atmosphereClass'])):
             hydro_mod+=-4
     except:
         pass
     #Pressure 
-        if(world['atmospherClass']!=15 or world['atmospherClass']!=13 and world['atmospherPressure']>=min_viable_atmo_tickeness):
-            match world['atmospherClass']:
+        if(world['atmosphereClass']!=15 or world['atmosphereClass']!=13 and world['atmospherePressure']>=min_viable_atmo_tickeness):
+            match world['atmosphereClass']:
                 case 10,11:
                     hydro_mod+=-2
                 case 12,13,14,15:
@@ -130,7 +130,7 @@ print(' Percentage:',f'{world['hydrographicsCoverage']}'+"%")
 
 world['populationClass']=roll(2,6,-2)
 
-printClass('Population Class',world['populationClass'])
+printClass('Population',world['populationClass'])
 
 world['populationNumber']= 0 if world['populationClass']==0 else random.randint(1,9)*10**world['populationClass']
     
@@ -172,8 +172,8 @@ world['lawClass']=roll(2,6,world['governmentClass']-7)
 printClass('Law Level',world['lawClass'])
 
 law_table=tables['LAW'][str(world['lawClass']) if world['lawClass']<=9 else str(9)]
-print(' Bannded Weaponds:',law_table['WEAPONDS'])
-print('  Bannded Armour:', law_table['ARMOUR'])
+print(' Banned Weaponds:',law_table['WEAPONS'])
+print('  Banned Armour:', law_table['ARMOUR'])
 starport_mod =0
 if world['populationClass']==10:
     starport_mod=2
@@ -201,7 +201,7 @@ for o in tech_table:
 world['techClass']=roll(1,6,tech_mod)
 
 #Enviromental Limits
-match world['atmospherClass']:
+match world['atmosphereClass']:
     case 0,1,10,15:
         if(world['techClass']<8):
             world['techClass']=8 
@@ -264,40 +264,40 @@ else:
     print('     None')
 trade_code =[]
 
-if(4<= world['atmospherClass'] >=9 and 4<=world['hydrographicsClass']>=8 and 5<=world['populationClass']>=7):
+if(4<= world['atmosphereClass'] >=9 and 4<=world['hydrographicsClass']>=8 and 5<=world['populationClass']>=7):
     trade_code.append('Ag')
-if(world['sizeClass']==0 and world['atmospherClass']==0 and world['hydrographicsClass']==0):
+if(world['sizeClass']==0 and world['atmosphereClass']==0 and world['hydrographicsClass']==0):
     trade_code.append('As')
 if(world['populationClass']==0 and world['governmentClass']==0 and world['lawClass']==0):
     trade_code.append('Ba')
-if(2<=world['atmospherClass']>=9 and world['hydrographicsClass']==0):
+if(2<=world['atmosphereClass']>=9 and world['hydrographicsClass']==0):
     trade_code.append('De')
-if(world['atmospherClass']>=10 and world['hydrographicsClass']>=1):
+if(world['atmosphereClass']>=10 and world['hydrographicsClass']>=1):
     trade_code.append('Fl')
-if(6<=world['sizeClass']>=8 and (5<world['atmospherClass']>=6 or world['atmospherClass']==8) and 5<=world['hydrographicsClass']>=7):
+if(6<=world['sizeClass']>=8 and (5<world['atmosphereClass']>=6 or world['atmosphereClass']==8) and 5<=world['hydrographicsClass']>=7):
     trade_code.append('Ga')
 if(world['populationClass']>=9):
     trade_code.append('Hi')
 if(world['techClass']>=12):
     trade_code.append('Ht')
 ##Added temperatureClass <9
-if(0<=world['atmospherClass']>=1 and world['hydrographicsClass']>=1 and world['temperatureClass']<=9):
+if(0<=world['atmosphereClass']>=1 and world['hydrographicsClass']>=1 and world['temperatureClass']<=9):
     trade_code.append('Ic')
-if(world['populationClass']>=9 and (0<=world['atmospherClass']>=2 or world['atmospherClass']==4 or world['atmospherClass']==7 or 9<=world['atmospherClass']>=12)):
+if(world['populationClass']>=9 and (0<=world['atmosphereClass']>=2 or world['atmosphereClass']==4 or world['atmosphereClass']==7 or 9<=world['atmosphereClass']>=12)):
     trade_code.append('In')
 if(1<=world['populationClass']>=3):
     trade_code.append('Lo')
 if(world['techClass']<=5):
     trade_code.append('Lt')
-if(0<=world['atmospherClass']>=3 and 0<=world['hydrographicsClass']>=3 and world['populationClass']>=6):
+if(0<=world['atmosphereClass']>=3 and 0<=world['hydrographicsClass']>=3 and world['populationClass']>=6):
     trade_code.append('Na')
-if(2<=world['atmospherClass']>=5 and 0<=world['hydrographicsClass']>=3):
+if(2<=world['atmosphereClass']>=5 and 0<=world['hydrographicsClass']>=3):
     trade_code.append('Po')
-if((world['atmospherClass']==6 or world['atmospherClass']==8) and 6<=world['populationClass']>=8 and 4<=world['governmentClass']>=9):
+if((world['atmosphereClass']==6 or world['atmosphereClass']==8) and 6<=world['populationClass']>=8 and 4<=world['governmentClass']>=9):
     trade_code.append('Ri')
-if(world['atmospherClass']==0):
+if(world['atmosphereClass']==0):
     trade_code.append('Va')
-if((3<=world['atmospherClass']>=9 or world['atmospherClass']>=13) and world['hydrographicsClass']>=-0):
+if((3<=world['atmosphereClass']>=9 or world['atmosphereClass']>=13) and world['hydrographicsClass']>=-0):
     trade_code.append('Wa')
 
 trade_table=tables['TRADE CODES']
@@ -310,7 +310,7 @@ for t in world['tradeCodes']:
 
 
 print('-------')
-code= world['starportClass']+getHex(world['sizeClass'])+getHex(world['atmospherClass'])+getHex(world['hydrographicsClass'])+getHex(world['populationClass'])+getHex(world['governmentClass'])+getHex(world['lawClass'])+getHex(world['techClass'])
+code= world['starportClass']+getHex(world['sizeClass'])+getHex(world['atmosphereClass'])+getHex(world['hydrographicsClass'])+getHex(world['populationClass'])+getHex(world['governmentClass'])+getHex(world['lawClass'])+getHex(world['techClass'])
 code+='-'
 
 for n in world['starportBases']:
