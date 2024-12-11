@@ -1,0 +1,7 @@
+{
+    "CORE TYPE":{
+        "0-90": {"TYPE": "Main Sequence", "DESCRIPTION": "Common Star", "MASS_MIN": 0.1, "MASS_MAX": 200},
+        "91-98": {"TYPE": "Multiple Stars", "DESCRIPTION": "Multiple Stellar bodies"},
+        "99-100": {"TYPE": "Blackhole", "DESCRIPTION": "Blackhole"}
+}
+}

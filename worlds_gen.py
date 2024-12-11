@@ -62,19 +62,19 @@ print(' Type:',world['atmopshereType'], '\033[91m Tainted \033[0m' if world['atm
 temp_mod= 0
 
 match world['atmosphereClass']:
-    case 0,1:
+    case 0 |1:
         temp_mod=0
-    case 2,3:
+    case 2 |3:
         temp_mod=-2
-    case 4,5,14:
+    case 4 |5 |14:
         temp_mod=-1
-    case 6,7:
+    case 6 |7:
         temp_mod=0
-    case 8,9:
+    case 8 |9:
         temp_mod=1
-    case 10,13,15:
+    case 10 | 13 |15:
         temp_mod=2
-    case 11,12:
+    case 11 |12:
         temp_mod=6
 
 hot_edge = False
@@ -122,9 +122,9 @@ if(world['sizeClass']>1):
     #Pressure 
         if(world['atmosphereClass']!=15 or world['atmosphereClass']!=13 and world['atmospherePressure']>=min_viable_atmo_tickeness):
             match world['atmosphereClass']:
-                case 10,11:
+                case 10 |11:
                     hydro_mod+=-2
-                case 12,13,14,15:
+                case 12 |13 | 14 | 15:
                     hydro_mod+=-6
     world['hydrographicsClass']=roll(2,6,hydro_mod)
 
@@ -188,9 +188,9 @@ elif world['populationClass']<=2:
     starport_mod=-2
 else:
     match world['populationClass']:
-        case 8,9:
+        case 8 |9:
             starport_mod=1
-        case 3,4:
+        case 3 |4:
             starport_mod=-1
 
 
@@ -213,13 +213,13 @@ world['techClass']=roll(1,6,tech_mod)
 
 #Enviromental Limits
 match world['atmosphereClass']:
-    case 0,1,10,15:
+    case 0 | 1 | 10 |15:
         if(world['techClass']<8):
             world['techClass']=8 
-    case 2,3,13,14:
+    case 2 | 3 | 13 | 14:
           if(world['techClass']<5):
             world['techClass']=5
-    case 4,7,9:
+    case 4 | 7 |9:
           if(world['techClass']<3):
             world['techClass']=3
     case 11:
