@@ -46,6 +46,9 @@
         
     },
     "TEMPERATURE":{
+        "-3":{"TYPE": "Frozen","MIN": -81, "MAX": -70},
+        "-2":{"TYPE": "Frozen","MIN": -81, "MAX": -70},
+        "-1":{"TYPE": "Frozen","MIN": -81, "MAX": -70},
         "0":{"TYPE": "Frozen","MIN": -81, "MAX": -70},
         "1":{"TYPE": "Frozen","MIN": -71, "MAX": -60},
         "2":{"TYPE": "Frozen","MIN": -61, "MAX": -51},

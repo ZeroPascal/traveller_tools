@@ -2,13 +2,13 @@ import json
 import random
 
 
-def roll(dice=1,type=6, mods=0,stat_mod=0,stat_type=0):
-    min=dice+mods+stat_mod*stat_type
-    if(min<0):
-        min=0
-    max=dice*type+mods+stat_mod*stat_type
-    #print("Rolling",dice,'d',type, "Min",min,"Max",max)
-    return(random.randint(min,max))
+def roll(dice=1,type=6, mods=0, min=None):
+    roll = mods
+    for i in range(dice):
+        roll+=random.randint(1,type)
+    if(min != None and roll<min):
+        roll = min
+    return(roll)
 
 def getHex(number):
     return f'{number:x}'.upper()
@@ -49,7 +49,8 @@ print(" Gravity",str(world['sizeGraity'])+' Gs')
 
 #Atmo, Side Dependat 
 
-world['atmosphereClass']= roll(2,6,world['sizeClass']-7)
+world['atmosphereClass']= roll(2,6,world['sizeClass']-7,0)
+
 atmo_table=tables['ATMOSPHERE'][str(world['atmosphereClass'])]
 world['atmospherePressure']= round(random.uniform(atmo_table['PRESSURE_MIN'],atmo_table['PRESSURE_MAX']),2)
 world['atmopshereType']=atmo_table['COMP']
@@ -62,19 +63,19 @@ print(' Type:',world['atmopshereType'], '\033[91m Tainted \033[0m' if world['atm
 temp_mod= 0
 
 match world['atmosphereClass']:
-    case 0,1:
+    case 0 |1:
         temp_mod=0
-    case 2,3:
+    case 2 |3:
         temp_mod=-2
-    case 4,5,14:
+    case 4 |5 |14:
         temp_mod=-1
-    case 6,7:
+    case 6 |7:
         temp_mod=0
-    case 8,9:
+    case 8 |9:
         temp_mod=1
-    case 10,13,15:
+    case 10 |13 |15:
         temp_mod=2
-    case 11,12:
+    case 11 |12:
         temp_mod=6
 
 hot_edge = False
@@ -122,11 +123,12 @@ if(world['sizeClass']>1):
     #Pressure 
         if(world['atmosphereClass']!=15 or world['atmosphereClass']!=13 and world['atmospherePressure']>=min_viable_atmo_tickeness):
             match world['atmosphereClass']:
-                case 10,11:
+                case 10 |11:
                     hydro_mod+=-2
-                case 12,13,14,15:
+                case 12 |13 |14 |15:
                     hydro_mod+=-6
-    world['hydrographicsClass']=roll(2,6,hydro_mod)
+    world['hydrographicsClass'] =roll(2,6,hydro_mod,0)
+   
 
 hydro_table=tables['HYDROGRAPHICS'][str(world['hydrographicsClass'])]
 world['hydrographicsCoverage']= round(random.uniform(hydro_table['MIN'],hydro_table['MAX'])*100)   
@@ -144,6 +146,8 @@ world['populationNumber']= 0 if world['populationClass']==0 else random.randint(
 print(' Population',f'{world['populationNumber']:,}')
 
 world['governmentClass']= roll(2,6,world['populationClass']-7)
+if(world['governmentClass']<0):
+    world['governmentClass']=0
 gov_table = tables['GOVERNMENT'][str(world['governmentClass'])]
 printClass('Government',world['governmentClass'])
 
@@ -174,7 +178,7 @@ for f in range(world['factionCount']):
 world['factions']= factions
 for f in factions:
     print("     ",f)
-world['lawClass']=roll(2,6,world['governmentClass']-7)
+world['lawClass']=roll(2,6,world['governmentClass']-7,0)
 
 printClass('Law Level',world['lawClass'])
 
@@ -188,9 +192,9 @@ elif world['populationClass']<=2:
     starport_mod=-2
 else:
     match world['populationClass']:
-        case 8,9:
+        case 8 |9:
             starport_mod=1
-        case 3,4:
+        case 3 |4:
             starport_mod=-1
 
 
@@ -213,13 +217,13 @@ world['techClass']=roll(1,6,tech_mod)
 
 #Enviromental Limits
 match world['atmosphereClass']:
-    case 0,1,10,15:
+    case 0 | 1 |10 |15:
         if(world['techClass']<8):
             world['techClass']=8 
-    case 2,3,13,14:
+    case 2| 3 |13 |14:
           if(world['techClass']<5):
             world['techClass']=5
-    case 4,7,9:
+    case 4| 7 |9:
           if(world['techClass']<3):
             world['techClass']=3
     case 11:
