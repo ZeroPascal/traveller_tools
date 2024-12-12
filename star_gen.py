@@ -109,7 +109,7 @@ print(' Radius',str(round(star['radius'],6))+"R⊙")
 print(' Temperature',str(round(star['temp']))+"K")
 print(' Luminosity',str(round(star['luminosity'],4))+"L☉")
 print(' Age',f'{star["age"]:,}')
-print(' Lifespan',f'{star["lifespan"]:,}')
+print(' Main Sequence Lifespan',f'{star["lifespan"]:,}')
 print(' Inner HZ',str(star['innerHZ'])+"AU")
 print(' Outer HZ',str(star['outerHZ'])+"AU")
 
