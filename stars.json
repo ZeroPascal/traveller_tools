@@ -1,0 +1,15 @@
+{
+   "Main Sequence":{
+        "M":{"MIN_M":0.34, "MAX_M":0.45,"MIN_R":0.2, "MAX_R":0.7, "MIN_T":2300, "MAX_T":3500, "DISTRIBUTION":0.76, "NEXT_PHASE":"White Dwarf", "AKA":"Red Dwaft", "EXTREAMS":"Solar Flares"},
+        "K":{"MIN_M":0.46, "MAX_M":0.8,"MIN_R":0.701, "MAX_R":0.96, "MIN_T":3900, "MAX_T":5300, "DISTRIBUTION":0.12, "NEXT_PHASE":"Red Giant", "AKA":"Main Sequence"},
+        "G":{"MIN_M":0.8, "MAX_M":1.04 ,"MIN_R":0.961, "MAX_R":1.15, "MIN_T":5300, "MAX_T":6000, "DISTRIBUTION": 0.076, "NEXT_PHASE":"Red Giant", "AKA":"Main Sequence"},
+        "F":{"MIN_M":1.04, "MAX_M":1.6,"MIN_R":1.151, "MAX_R":1.4, "MIN_T":6000, "MAX_T":7300, "DISTRIBUTION":0.03, "NEXT_PHASE":"Red Giant", "AKA":"Main Sequence"},
+        "A":{"MIN_M":1.4, "MAX_M":2.1,"MIN_R":1.401, "MAX_R":1.8, "MIN_T":7300, "MAX_T":10000, "DISTRIBUTION":0.0061, "NEXT_PHASE":"Red Giant", "AKA":"Main Sequence"},
+        "B":{"MIN_M":2.1, "MAX_M":16 ,"MIN_R":1.801, "MAX_R":6.6, "MIN_T":10000, "MAX_T":33000, "DISTRIBUTION":0.0012, "NEXT_PHASE":"Red Giant", "AKA":"Main Sequence"},
+        "O":{"MIN_M":16, "MAX_M":20 ,"MIN_R":6.601, "MAX_R":66.6, "MIN_T":33000, "MAX_T":50000, "DISTRIBUTION":0.0003, "NEXT_PHASE":"Neutron", "AKA":"Main Sequence"},
+        "OV":{"MIN_M":20, "MAX_M":150 ,"MIN_R":6.601, "MAX_R":66.6, "MIN_T":33000, "MAX_T":500000, "DISTRIBUTION":0.00002, "NEXT_PHASE":"Blackhole", "AKA":"Giant"}
+        
+   },
+   "AGE_OF_UNIVERSE": 13000000
+
+}
