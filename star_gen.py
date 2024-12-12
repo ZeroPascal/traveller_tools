@@ -90,7 +90,7 @@ if(star['age']>=star['lifespan']):
             star['type']='White Dwarf'
             star['mass']=star['mass']*.01 #Blowoff
             star['radius']=star['radius']*0.00001437401179
-            star['luminosity']=getLuminosity(s['mass'])
+            star['luminosity']=getLuminosity(star['mass'])
 
         elif (1.44<=star['mass']>8):
             star=makeNeutron(star)
