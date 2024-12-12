@@ -42,10 +42,13 @@
         "7":{"MIN":0.66,"MAX":0.75,"DESCRIPTION": "Earth-like"},
         "8":{"MIN":0.76,"MAX":0.85,"DESCRIPTION": "Few islands and archipelagos"},
         "9":{"MIN":0.86,"MAX":0.95,"DESCRIPTION": "Almost entirely water"},
-        "10":{"MIN":0.96,"MAX":1,"DESCRIPTION": "Waterwrold"}
+        "10":{"MIN":0.96,"MAX":1,"DESCRIPTION": "Waterworld"}
         
     },
     "TEMPERATURE":{
+        "-3":{"TYPE": "Frozen","MIN": -81, "MAX": -70},
+        "-2":{"TYPE": "Frozen","MIN": -81, "MAX": -70},
+        "-1":{"TYPE": "Frozen","MIN": -81, "MAX": -70},
         "0":{"TYPE": "Frozen","MIN": -81, "MAX": -70},
         "1":{"TYPE": "Frozen","MIN": -71, "MAX": -60},
         "2":{"TYPE": "Frozen","MIN": -61, "MAX": -51},
@@ -96,7 +99,7 @@
             "EXAMPLE": "Corporate outpost, asteroid mine, feudal domain",
             "CONTRABAND": " Weapons, Drugs, Travellers"
         },
-        "2":{"TYPE": "Participating Democarcy",
+        "2":{"TYPE": "Participating Democracy",
             "DESCRIPTION": "Ruling functions are reached by the advice and consent of the citizenry directly.",
             "EXAMPLE": "Collective, Tribal council, Comm-linked Consensus",
             "CONTRABAND": "Drugs"
@@ -167,7 +170,7 @@
             "CONTRABAND": "Varies"
         }
     },
-    "FRACTIONS":{
+    "FACTIONS":{
         "2": "Obscure",
         "3": "Obscure",
         "4": "Fringe",
@@ -185,7 +188,7 @@
             "Minor":{"DESCRIPTION": "Some supporters"},
             "Notable":{"DESCRIPTION": "Significant support, well known"},
             "Significant":{"DESCRIPTION": "Nearly as powerful as the government"},
-            "Overhwelming":{"DESCRIPTION": "More powerful than the government"}       
+            "Overwhelming":{"DESCRIPTION": "More powerful than the government"}       
         }
     },
     "LAW":{
@@ -195,7 +198,7 @@
         "3":{"WEAPONS": "Military grade", "ARMOUR": "Flak"},
         "4":{"WEAPONS": "Light assult, submachine guns", "ARMOUR": "Cloth"},
         "5":{"WEAPONS": "Personal concealable", "ARMOUR": "Mesh"},
-        "6":{"WEAPONS": "All firearms execept shotguns & stunners; carrying weapons disouraged", "ARMOUR": "None"},
+        "6":{"WEAPONS": "All firearms execept shotguns & stunners; carrying weapons discouraged", "ARMOUR": "None"},
         "7":{"WEAPONS": "Shotguns", "ARMOUR": "None"},
         "8":{"WEAPONS": "All bladed weapons, stunners", "ARMOUR": "All visible armour"},
         "9":{"WEAPONS": "All", "ARMOUR": "All"}
