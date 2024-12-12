@@ -125,7 +125,7 @@ if(world['sizeClass']>1):
             match world['atmosphereClass']:
                 case 10 |11:
                     hydro_mod+=-2
-                case 12 |13 |14 |15:
+                case 12 |13 | 14 | 15:
                     hydro_mod+=-6
     world['hydrographicsClass'] =roll(2,6,hydro_mod,0)
    
