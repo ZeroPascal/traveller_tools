@@ -115,13 +115,11 @@ world['hydrographicsClass']=0
 if(world['sizeClass']>1):
     hydro_mod=-7
     #Atmo Exclusion
-    try:
-        if([0,1,10,15].index(world['atmosphereClass'])):
+    match world['atmosphereClass']:
+        case 0 | 1 | 10 | 15:
             hydro_mod+=-4
-    except:
-        pass
     #Pressure 
-        if(world['atmosphereClass']!=15 or world['atmosphereClass']!=13 and world['atmospherePressure']>=min_viable_atmo_tickeness):
+    if(world['atmosphereClass']!=15 or world['atmosphereClass']!=13 and world['atmospherePressure']>=min_viable_atmo_tickeness):
             match world['atmosphereClass']:
                 case 10 |11:
                     hydro_mod+=-2
