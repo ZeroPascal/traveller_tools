@@ -65,6 +65,7 @@
         "13":{"TYPE": "Boiling","MIN": 86, "MAX": 89},
         "14":{"TYPE": "Boiling","MIN": 90, "MAX": 95},
         "15":{"TYPE": "Boiling","MIN": 96, "MAX": 99},
+        "16":{"TYPE": "Boiling","MIN": 99, "MAX": 100},
         "TYPES":{
             "Frozen":{"MIN": -110, "MAX": -51, "AVG_TEMP":-51, "DESCRIPTION": "Frozen world. No liquid water, very dry atmosphere." },
             "Cold":{"MIN": -50, "MAX": 0,"AVG_TEMP":-25, "DESCRIPTION": "Icy world. Little liquid water, extensive ice caps, few clouds."},

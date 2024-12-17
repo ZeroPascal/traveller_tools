@@ -90,7 +90,7 @@ match random.randint(0,2):
 world['temperatureZone']= 'Cold' if cold_edge else 'Hot' if hot_edge else 'Normal'
 
 
-world['temperatureClass']= roll(2,6,temp_mod)
+world['temperatureClass']=  roll(2,6,temp_mod)
 if(world['temperatureClass']<12):
     temp_table = tables['TEMPERATURE'][str(world['temperatureClass'])]
 else:
