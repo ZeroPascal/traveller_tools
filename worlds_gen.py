@@ -1,6 +1,6 @@
 import json
 import random
-
+import sys
 
 def roll(dice=1,type=6, mods=0, min=None):
     roll = mods
@@ -17,6 +17,12 @@ def printClass(name,number,ignoreHex=False):
         number = getHex(number)
     print('\033[1m'+str(name),'Class',str(number)+"-",'\033[0m')
 
+def printResults(attr, result, mod):
+    print('\033[96m',attr, result,'Rolled', result-mod,'Mod',mod,'\033[0m')
+try:
+    print_results = True if sys.argv[1] else False
+except:
+    print_results = False
 #Import aiRules
 rules = open('aiRules.txt',"r").read()
 print(rules)
@@ -48,8 +54,10 @@ world['sizeGraity']= round(g_force/9.8,2)
 print(" Gravity",str(world['sizeGraity'])+' Gs')
 
 #Atmo, Side Dependat 
-
-world['atmosphereClass']= roll(2,6,world['sizeClass']-7,0)
+atmo_mod=world['sizeClass']-7
+world['atmosphereClass']= roll(2,6,atmo_mod,0)
+if(print_results):
+    printResults('Atmo',world['atmosphereClass'],atmo_mod)
 
 atmo_table=tables['ATMOSPHERE'][str(world['atmosphereClass'])]
 world['atmospherePressure']= round(random.uniform(atmo_table['PRESSURE_MIN'],atmo_table['PRESSURE_MAX']),2)
@@ -91,6 +99,9 @@ world['temperatureZone']= 'Cold' if cold_edge else 'Hot' if hot_edge else 'Norma
 
 
 world['temperatureClass']=  roll(2,6,temp_mod)
+
+if(print_results):
+    printResults('Temp',world['temperatureClass'],temp_mod)
 if(world['temperatureClass']<12):
     temp_table = tables['TEMPERATURE'][str(world['temperatureClass'])]
 else:
@@ -128,6 +139,8 @@ if(world['sizeClass']>1):
                 case 12 |13 | 14 | 15:
                     hydro_mod+=-6
     world['hydrographicsClass'] =roll(2,6,hydro_mod,0)
+    if(print_results):
+        printResults('Hydro',world['hydrographicsClass'],hydro_mod)
    
 
 hydro_table=tables['HYDROGRAPHICS'][str(world['hydrographicsClass'])]
