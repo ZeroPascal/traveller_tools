@@ -102,16 +102,13 @@ world['temperatureClass']=  roll(2,6,temp_mod)
 
 if(print_results):
     printResults('Temp',world['temperatureClass'],temp_mod)
-if(world['temperatureClass']<12):
-    temp_table = tables['TEMPERATURE'][str(world['temperatureClass'])]
-else:
-    temp_table = tables['TEMPERATURE']["12"] 
-                                
 
-world['temperatureType']= 'Boiling' if world['temperatureClass']>=12 else temp_table['TYPE']
+temp_table = tables['TEMPERATURE'][str(world['temperatureClass'])]
 
-temp_type= tables['TEMPERATURE'][str(world['temperatureClass'])]
-world['temperatureAverage'] = random.randint(temp_type["MIN"],temp_type["MAX"])
+
+world['temperatureType']= temp_table['TYPE']
+
+world['temperatureAverage'] = random.randint(temp_table["MIN"],temp_table["MAX"])
 
 printClass('Temperature', world['temperatureClass'])
 #print(" Temperate Zone:", world['temperatureType']
