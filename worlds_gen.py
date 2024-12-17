@@ -119,7 +119,7 @@ if(world['sizeClass']>1):
         case 0 | 1 | 10 | 11 | 12| 13| 14| 15:
             hydro_mod+=-4
         case _:
-            hydro_mod=world['atmosphereClass']
+            hydro_mod+=world['atmosphereClass']
     #Pressure 
     if(world['atmosphereClass']!=13 or (world['atmosphereClass']!=15 and world['atmospherePressure']>=min_viable_atmo_tickeness)):
             match world['atmosphereClass']:
