@@ -80,11 +80,11 @@ match world['atmosphereClass']:
 
 hot_edge = False
 cold_edge = False
-match random.randint(0,2):
-    case 1:
+match random.randint(0,5):
+    case 0:
         temp_mod+=4
         hot_edge= True
-    case 2:
+    case 1:
         temp_mod+=-4
         cold_edge= True
 world['temperatureZone']= 'Cold' if cold_edge else 'Hot' if hot_edge else 'Normal'
