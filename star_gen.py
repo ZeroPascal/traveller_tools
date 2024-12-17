@@ -28,7 +28,7 @@ for star_class in tables['Main Sequence']:
 star_table= tables['Main Sequence'][star['type']]
 
 star['mass']= getDistributed(star_table['MIN_M'],star_table['MAX_M'])
-star['radius']= getDistributed(star_table['MIN_R'],star_table['MAX_R'])
+star['radius']= star['mass']**0.8
 star['temp'] =getDistributed(star_table['MIN_T'],star_table['MAX_T'])
 star['luminosity']= getLuminosity(star['mass'])
 star['lifespan']= round(star['mass']/star['luminosity']*10**10) #Trillions
