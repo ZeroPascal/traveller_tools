@@ -108,7 +108,7 @@ print(" Average Temperature:",world['temperatureAverage'])
     
 #Hydrographics
 
-min_viable_atmo_tickeness=.5
+min_viable_atmo_tickeness=2
 #Starts at Zero, Changes if Size is greater than 1
 world['hydrographicsClass']=0
 #Size Exclusion
@@ -116,10 +116,10 @@ if(world['sizeClass']>1):
     hydro_mod=-7
     #Atmo Exclusion
     match world['atmosphereClass']:
-        case 0 | 1 | 10 | 15:
+        case 0 | 1 | 10 | 11 | 12| 13| 14| 15:
             hydro_mod+=-4
     #Pressure 
-    if(world['atmosphereClass']!=15 or world['atmosphereClass']!=13 and world['atmospherePressure']>=min_viable_atmo_tickeness):
+    if(world['atmosphereClass']!=13 or world['atmosphereClass']!=15 and world['atmospherePressure']>=min_viable_atmo_tickeness):
             match world['atmosphereClass']:
                 case 10 |11:
                     hydro_mod+=-2
