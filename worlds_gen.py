@@ -61,11 +61,11 @@ if(print_results):
 
 atmo_table=tables['ATMOSPHERE'][str(world['atmosphereClass'])]
 world['atmospherePressure']= round(random.uniform(atmo_table['PRESSURE_MIN'],atmo_table['PRESSURE_MAX']),2)
-world['atmopshereType']=atmo_table['COMP']
-world['atmopsherTainted']=atmo_table['TAINTED']
+world['atmosphereType']=atmo_table['COMP']
+world['atmosphereTainted']=atmo_table['TAINTED']
 printClass("Atmosphere",world['atmosphereClass'])
 print(' Pressure',world['atmospherePressure'],)
-print(' Type:',world['atmopshereType'], '\033[91m Tainted \033[0m' if world['atmopsherTainted'] else '\033[92m Safe \033[0m ')
+print(' Type:',world['atmosphereType'], '\033[91m Tainted \033[0m' if world['atmosphereTainted'] else '\033[92m Safe \033[0m ')
 #Temperature
 
 temp_mod= 0
@@ -346,11 +346,11 @@ print(code)
 
 print("{{World|image={{FULLPAGENAME}}.jpg|caption=|location=")
 print("|starport="f'{world['starportClass']}')
-print("|size="f'{world['sizeClass']}'+"|sizeD="f'{world['sizeDiameter']}'+"Km : "f'{world['sizeMass']}'+"Mₑ : "+f'{world['sizeGraity']}'+"Gs")
-print("|atmosphere="f'{world["atmosphereClass"]}'+"|atomsphereD="f'{world["atmospherePressure"]}'+" bar :"f'{world["atmopshereType"]}'+ f'{"-Tainted " if world['atmopsherTainted'] else ''}' )
-print("|temperature="f'{world["temperatureClass"]}'+"| temperatureD="f'{world['temperatureAverage']}'+"º : "+f'{world['temperatureZone']}'+" Zone")
+print("|size="f'{world['sizeClass']}'+"|sizeD=&nbsp;|diameter="f'{world['sizeDiameter']}'+"|mass="f'{world['sizeMass']}'+"|gravity="+f'{world['sizeGraity']}')
+print("|atmosphere="f'{world["atmosphereClass"]}'+"|atmosphereD="f'{world["atmosphereType"]}'+ f'{", Tainted" if world['atmosphereTainted'] else ''}'+"|pressure="f'{world["atmospherePressure"]}')
+print("|temperature="f'{world["temperatureClass"]}'+"|temperatureD="f'{world['temperatureZone']}'+" Zone"+"|temperatureAvg="f'{world['temperatureAverage']}')
 print("|hydrographics="f'{world['hydrographicsClass']}'+"| hydrographicsD="f'{world['hydrographicsCoverage']}'+"%")
-print("|population="f'{world['populationClass']}'+"|populationD="+f'{world['populationNumber']:,}')
+print("|population="f'{world['populationClass']}'+"|populationD="+f'{world['populationNumber']}'+" inhabitants")
 print("|government="f'{world['governmentClass']}'+"|law="f'{world['lawClass']}'+"|tech="f'{world['techClass']}')
 
 print("|facilities=")
