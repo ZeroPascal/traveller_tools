@@ -350,7 +350,7 @@ print("|size="f'{world['sizeClass']}'+"|sizeD=&nbsp;|diameter="f'{world['sizeDia
 print("|atmosphere="f'{world["atmosphereClass"]}'+"|atmosphereD="f'{world["atmosphereType"]}'+ f'{", Tainted" if world['atmosphereTainted'] else ''}'+"|pressure="f'{world["atmospherePressure"]}')
 print("|temperature="f'{world["temperatureClass"]}'+"|temperatureD="f'{world['temperatureZone']}'+" Zone"+"|temperatureAvg="f'{world['temperatureAverage']}')
 print("|hydrographics="f'{world['hydrographicsClass']}'+"| hydrographicsD="f'{world['hydrographicsCoverage']}'+"%")
-print("|population="f'{world['populationClass']}'+"|populationD="+f'{world['populationNumber']}'+" inhabitants")
+print("|population="f'{world['populationClass']}'+"|populationD="+f'{world['populationNumber']}')
 print("|government="f'{world['governmentClass']}'+"|law="f'{world['lawClass']}'+"|tech="f'{world['techClass']}')
 
 print("|facilities=")
