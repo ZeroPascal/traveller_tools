@@ -344,7 +344,7 @@ for n in world['starportBases']:
 
 print(code)
 
-print("{{World|image={{FULLPAGENAME}}.jpg|caption=|location=")
+print("{{World|image={{FULLPAGENAME}}.jpg|type="f'{world['sizeType']}')
 print("|starport="f'{world['starportClass']}')
 print("|size="f'{world['sizeClass']}'+"|sizeD=&nbsp;|diameter="f'{world['sizeDiameter']}'+"|mass="f'{world['sizeMass']}'+"|gravity="+f'{world['sizeGraity']}')
 print("|atmosphere="f'{world["atmosphereClass"]}'+"|atmosphereD="f'{world["atmosphereType"]}'+ f'{", Tainted" if world['atmosphereTainted'] else ''}'+"|pressure="f'{world["atmospherePressure"]}')
