@@ -344,6 +344,28 @@ for n in world['starportBases']:
 
 print(code)
 
+print("{{World|image={{FULLPAGENAME}}.jpg|caption=|location=")
+print("|starport="f'{world['starportClass']}')
+print("|size="f'{world['sizeClass']}'+"|sizeD="f'{world['sizeDiameter']}'+"Km : "f'{world['sizeMass']}'+"Mₑ : "+f'{world['sizeGraity']}'+"Gs")
+print("|atmosphere="f'{world["atmosphereClass"]}'+"|atomsphereD="f'{world["atmospherePressure"]}'+" bar :"f'{world["atmopshereType"]}'+ f'{"-Tainted " if world['atmopsherTainted'] else ''}' )
+print("|temperature="f'{world["temperatureClass"]}'+"| temperatureD="f'{world['temperatureAverage']}'+"º : "+f'{world['temperatureZone']}'+" Zone")
+print("|hydrographics="f'{world['hydrographicsClass']}'+"| hydrographicsD="f'{world['hydrographicsCoverage']}'+"%")
+print("|population="f'{world['populationClass']}'+"|populationD="+f'{world['populationNumber']:,}')
+print("|government="f'{world['governmentClass']}'+"|law="f'{world['lawClass']}'+"|tech="f'{world['techClass']}')
 
+print("|facilities=")
+if(len(world['starportFacilites'])>0):
+    for f in world['starportFacilites']:
+        print("* "+f)
+print("|bases=")
+if(len(world['starportBases'])>0):
+    for b in world['starportBases']:
+        print('* '+b)
+print("|trade=")
+tc=''
+for t in world['tradeCodes']:
+    tc+='[['+t+']] '
+print(tc)
+print("|travel=Green}}")
 
 
