@@ -42,16 +42,16 @@ size_type = size_table["EXAMPLE"].split(',')
 world['sizeType'] = size_type[random.randint(0,len(size_type)-1)]
 printClass('Size',world['sizeClass'])
 print(' Type',world['sizeType'])
-print(" Diameter",str(world['sizeDiameter'] )+" Km")
+print(" Diameter",str(world['sizeDiameter'] )+" km")
 print(" Mass",str(world['sizeMass'])+' Mₑ')
 
 G=6.6743e-11
 e=(5.97219 * 10**24)
 
 g_force= (((G*(world['sizeMass']*(e)))/(world['sizeDiameter'] *1000/2)**2))
-world['sizeGraity']= round(g_force/9.8,2)
+world['sizeGravity']= round(g_force/9.8,2)
 
-print(" Gravity",str(world['sizeGraity'])+' Gs')
+print(" Gravity",str(world['sizeGravity'])+' Gs')
 
 #Atmo, Side Dependat 
 atmo_mod=world['sizeClass']-7
@@ -63,9 +63,12 @@ atmo_table=tables['ATMOSPHERE'][str(world['atmosphereClass'])]
 world['atmospherePressure']= round(random.uniform(atmo_table['PRESSURE_MIN'],atmo_table['PRESSURE_MAX']),2)
 world['atmosphereType']=atmo_table['COMP']
 world['atmosphereTainted']=atmo_table['TAINTED']
+world['atmosphereGear']=atmo_table['GEAR']
 printClass("Atmosphere",world['atmosphereClass'])
-print(' Pressure',world['atmospherePressure'],)
+print(' Pressure',world['atmospherePressure'])
 print(' Type:',world['atmosphereType'], '\033[91m Tainted \033[0m' if world['atmosphereTainted'] else '\033[92m Safe \033[0m ')
+if(world['atmosphereGear']):
+    print(' Equipment Required:',world['atmosphereGear'])
 #Temperature
 
 temp_mod= 0
@@ -249,9 +252,9 @@ starport_table=tables['STARPORTS'][str(world['starportClass'])]
 printClass('Starport',world['starportClass'],True)
 
 
-#Starport Faclities
+#Starport Facilities
 world['starportCost']=roll(1,6,0)*starport_table["COST"]
-world['starportFacilites']=starport_table['FACILITIES']
+world['starportFacilities']=starport_table['FACILITIES']
 
 highportDM= starport_table['HIGHPORT']
 if(highportDM>0):
@@ -267,12 +270,12 @@ if(highportDM>0):
         highport_mod+=-1
     
     if(roll(2,6,highport_mod)>=highportDM):
-        world['starportFacilites'].append('Highport')
+        world['starportFacilities'].append('Highport')
 
 print(" Berthing Cost",world['starportCost'])
-print(" Facliites:")
-if(len(world['starportFacilites'])>0):
-    for f in world['starportFacilites']:
+print(" Facilities:")
+if(len(world['starportFacilities'])>0):
+    for f in world['starportFacilities']:
         print('     ',f)
 else:
     print('     None')
@@ -346,16 +349,16 @@ print(code)
 
 print("{{World|image={{FULLPAGENAME}}.jpg|type="f'{world['sizeType']}')
 print("|starport="f'{world['starportClass']}')
-print("|size="f'{world['sizeClass']}'+"|sizeD=&nbsp;|diameter="f'{world['sizeDiameter']}'+"|mass="f'{world['sizeMass']}'+"|gravity="+f'{world['sizeGraity']}')
-print("|atmosphere="f'{world["atmosphereClass"]}'+"|atmosphereD="f'{world["atmosphereType"]}'+ f'{", Tainted" if world['atmosphereTainted'] else ''}'+"|pressure="f'{world["atmospherePressure"]}')
+print("|size="f'{world['sizeClass']}'+"|sizeD=&nbsp;|diameter="f'{world['sizeDiameter']}'+"|mass="f'{world['sizeMass']}'+"|gravity="+f'{world['sizeGravity']}')
+print("|atmosphere="f'{world["atmosphereClass"]}'+"|atmosphereD="f'{world["atmosphereType"]}'+ f'{", Tainted" if world['atmosphereTainted'] else ''}'+"|pressure="f'{world["atmospherePressure"]}'+"|equipment="f'{world["atmosphereGear"]}')
 print("|temperature="f'{world["temperatureClass"]}'+"|temperatureD="f'{world['temperatureZone']}'+" Zone"+"|temperatureAvg="f'{world['temperatureAverage']}')
-print("|hydrographics="f'{world['hydrographicsClass']}'+"| hydrographicsD="f'{world['hydrographicsCoverage']}'+"%")
+print("|hydrographics="f'{world['hydrographicsClass']}'+"| hydrographicsD="f'{hydro_table["DESCRIPTION"]}'+" ("f'{world['hydrographicsCoverage']}'+"%)")
 print("|population="f'{world['populationClass']}'+"|populationD="+f'{world['populationNumber']}')
 print("|government="f'{world['governmentClass']}'+"|law="f'{world['lawClass']}'+"|tech="f'{world['techClass']}')
 
 print("|facilities=")
-if(len(world['starportFacilites'])>0):
-    for f in world['starportFacilites']:
+if(len(world['starportFacilities'])>0):
+    for f in world['starportFacilities']:
         print("* "+f)
 print("|bases=")
 if(len(world['starportBases'])>0):
