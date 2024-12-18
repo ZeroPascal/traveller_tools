@@ -135,11 +135,12 @@ if(world['sizeClass']>1):
                     hydro_mod+=-2
                 case 12 |13 | 14 | 15:
                     hydro_mod+=-6
-    world['hydrographicsClass'] =roll(2,6,hydro_mod,0)
+    world['hydrographicsClass'] =roll(2,6,hydro_mod,0) 
     if(print_results):
         printResults('Hydro',world['hydrographicsClass'],hydro_mod)
    
-
+if(world['hydrographicsClass']>10):
+    world['hydrographicsClass']=10
 hydro_table=tables['HYDROGRAPHICS'][str(world['hydrographicsClass'])]
 world['hydrographicsCoverage']= round(random.uniform(hydro_table['MIN'],hydro_table['MAX'])*100)   
 printClass('Hydrographics',world['hydrographicsClass'])
