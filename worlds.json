@@ -1,16 +1,16 @@
 {
     "SIZE":{
-        "0":{"DIAMETER_MIN": 1, "DIAMETER_MAX":350, "MASS_MIN": 0.0000001, "MASS_MAX":0.0000063, "EXAMPLE": "Asteroid, Orbital Complex","Gs":0.001},
-        "1":{"DIAMETER_MIN": 1001, "DIAMETER_MAX":1600, "MASS_MIN": 0.0002, "MASS_MAX":0.0009, "EXAMPLE": "Small-mass Moon, Massive Asteroid","Gs":0.05},
-        "2":{"DIAMETER_MIN": 1601, "DIAMETER_MAX":2000, "MASS_MIN": 0.001, "MASS_MAX":0.009, "EXAMPLE": "Medium-mass Moon, Dwarf Planet","Gs":0.15},
-        "3":{"DIAMETER_MIN": 3201, "DIAMETER_MAX":4800, "MASS_MIN": 0.01, "MASS_MAX":0.04, "EXAMPLE": "Small Planet, Average-mass Moon","Gs":0.25},
-        "4":{"DIAMETER_MIN": 4801, "DIAMETER_MAX":6400, "MASS_MIN": 0.05, "MASS_MAX":0.09, "EXAMPLE": "Planet, Planetary-mass Moon","Gs":0.35},
-        "5":{"DIAMETER_MIN": 6401, "DIAMETER_MAX":8000, "MASS_MIN": 0.1, "MASS_MAX":0.3, "EXAMPLE": "Planet","Gs":0.45},
-        "6":{"DIAMETER_MIN": 8001, "DIAMETER_MAX":9600, "MASS_MIN": 0.4, "MASS_MAX":0.6, "EXAMPLE": "Planet","Gs":0.7},
-        "7":{"DIAMETER_MIN": 9601, "DIAMETER_MAX":11200, "MASS_MIN": 0.7, "MASS_MAX":0.9, "EXAMPLE": "Planet","Gs":0.9},
-        "8":{"DIAMETER_MIN": 11201, "DIAMETER_MAX":12800, "MASS_MIN": 0.91, "MASS_MAX":1.1, "EXAMPLE": "Planet","Gs":1},
-        "9":{"DIAMETER_MIN": 12801, "DIAMETER_MAX":14400, "MASS_MIN": 1.2, "MASS_MAX":1.25, "EXAMPLE": "Large Planet","Gs":1.25},
-        "10":{"DIAMETER_MIN": 14401, "DIAMETER_MAX":16000, "MASS_MIN": 1.26, "MASS_MAX":1.5, "EXAMPLE": "Large Planet","Gs":1.4}
+        "0":{"DIAMETER_MIN": 1, "DIAMETER_MAX":350, "MASS_MIN": 0.0000001, "MASS_MAX":0.0000063, "EXAMPLE": ["Asteroid", "Orbital Complex"],"Gs":0.001},
+        "1":{"DIAMETER_MIN": 1001, "DIAMETER_MAX":1600, "MASS_MIN": 0.0002, "MASS_MAX":0.0009, "EXAMPLE": ["Small-mass Moon", "Massive Asteroid"],"Gs":0.05},
+        "2":{"DIAMETER_MIN": 1601, "DIAMETER_MAX":2000, "MASS_MIN": 0.001, "MASS_MAX":0.009, "EXAMPLE": ["Medium-mass Moon", "Dwarf Planet"],"Gs":0.15},
+        "3":{"DIAMETER_MIN": 3201, "DIAMETER_MAX":4800, "MASS_MIN": 0.01, "MASS_MAX":0.04, "EXAMPLE": ["Small Planet, Average-mass Moon"]},
+        "4":{"DIAMETER_MIN": 4801, "DIAMETER_MAX":6400, "MASS_MIN": 0.05, "MASS_MAX":0.09, "EXAMPLE": ["Planet", "Planetary-mass Moon"]},
+        "5":{"DIAMETER_MIN": 6401, "DIAMETER_MAX":8000, "MASS_MIN": 0.1, "MASS_MAX":0.3, "EXAMPLE": ["Planet"]},
+        "6":{"DIAMETER_MIN": 8001, "DIAMETER_MAX":9600, "MASS_MIN": 0.4, "MASS_MAX":0.6, "EXAMPLE":  ["Planet"]},
+        "7":{"DIAMETER_MIN": 9601, "DIAMETER_MAX":11200, "MASS_MIN": 0.7, "MASS_MAX":0.9, "EXAMPLE":  ["Planet"]},
+        "8":{"DIAMETER_MIN": 11201, "DIAMETER_MAX":12800, "MASS_MIN": 0.91, "MASS_MAX":1.1, "EXAMPLE":  ["Planet"]},
+        "9":{"DIAMETER_MIN": 12801, "DIAMETER_MAX":14400, "MASS_MIN": 1.2, "MASS_MAX":1.25, "EXAMPLE": ["Large Planet"]},
+        "10":{"DIAMETER_MIN": 14401, "DIAMETER_MAX":16000, "MASS_MIN": 1.26, "MASS_MAX":1.5, "EXAMPLE": ["Large Planet"]}
 
     },
     "ATMOSPHERE":{
